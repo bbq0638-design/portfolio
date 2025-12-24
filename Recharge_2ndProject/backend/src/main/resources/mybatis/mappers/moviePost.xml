@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.recharge.backend.movie.dao.MoviePostDAO">
+
+    <resultMap id="MoviePostMap" type="com.recharge.backend.movie.vo.MoviePostVO">
+        <id     column="MOVIE_POST_ID" property="moviePostId"/>
+        <result column="USER_ID" property="userId"/>
+        <result column="MOVIE_ID" property="movieId"/>
+        <result column="MOVIE_POST_TITLE" property="moviePostTitle"/>
+        <result column="MOVIE_POST_TEXT" property="moviePostText"/>
+        <result column="CREATE_DATE" property="createDate"/>
+        <result column="CREATE_ID" property="createId"/>
+        <result column="UPDATED_DATE" property="updatedDate"/>
+        <result column="UPDATED_ID" property="updatedId"/>
+
+        <!-- join -->
+        <result column="MOVIE_TITLE" property="movieTitle"/>
+        <result column="MOVIE_POSTER" property="poster"/>
+        <result column="MOVIE_SCORE" property="score"/>
+    </resultMap>
+
+    <select id="getNextPostId" resultType="long">
+        SELECT NVL(MAX(MOVIE_POST_ID), 0) + 1 FROM TB_MOVIE_POST
+    </select>
+
+    <insert id="insertMoviePost" parameterType="com.recharge.backend.movie.vo.MoviePostVO">
+        INSERT INTO TB_MOVIE_POST (
+        MOVIE_POST_ID, USER_ID, MOVIE_ID, MOVIE_POST_TITLE,
+        MOVIE_POST_TEXT, CREATE_DATE, CREATE_ID, UPDATED_DATE, UPDATED_ID
+        ) VALUES (
+        #{moviePostId}, #{userId}, #{movieId}, #{moviePostTitle},
+        #{moviePostText}, SYSDATE, 'system', SYSDATE, 'system'
+        )
+    </insert>
+
+    <select id="selectAll" resultMap="MoviePostMap">
+        SELECT
+        MP.MOVIE_POST_ID,
+        MP.USER_ID,
+        MP.MOVIE_ID,
+        MP.MOVIE_POST_TITLE,
+        MP.MOVIE_POST_TEXT,
+        MP.CREATE_DATE,
+        MP.CREATE_ID,
+        MP.UPDATED_DATE,
+        MP.UPDATED_ID,
+        M.MOVIE_TITLE,
+        M.MOVIE_POSTER,
+        M.MOVIE_SCORE
+        FROM TB_MOVIE_POST MP
+        LEFT JOIN TB_MOVIE M ON M.MOVIE_ID = MP.MOVIE_ID
+        ORDER BY MP.MOVIE_POST_ID DESC
+    </select>
+
+    <select id="selectById" parameterType="long" resultType="com.recharge.backend.movie.vo.MoviePostVO">
+        SELECT *
+        FROM TB_MOVIE_POST
+        WHERE MOVIE_POST_ID = #{postId}
+    </select>
+
+</mapper>

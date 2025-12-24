@@ -1,0 +1,210 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    align-items: center;
+    height: 120px;
+    z-index: 1;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+header .menu {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+    gap: 80px;
+    margin-top: 80px;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+header .menu li a:hover {
+    color: #ffbc4c;
+}
+
+
+header .login_status,
+header .logout_status {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: center;
+}
+
+
+header .login_status .profile_image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+header .login_status img {
+    width: 40px;
+    height: 40px;
+}
+/*서브헤더*/
+.sub_header {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 auto;
+    background-color: #ffbc4c;
+} 
+
+main {
+    padding-top: 130px; /* 헤더가 가리지 않도록 여백 추가 */
+
+    }
+.main {
+    margin: 0 150px 150px;
+}
+
+
+
+.line1 {
+    border-top: 2px solid black;
+    margin-top: 20px;
+}
+
+.post_content {
+    display: flex;
+    gap: 20px;
+    margin: 30px 20px 0px 20px;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+.post_section p {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.pic_1 {
+    width: 45%;
+    display: flex;
+    align-items: flex-start;
+}
+.pic_1 img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+.pics {
+    width: 45%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    
+}
+.pics img {
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+.add_pic i {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.add-btn{
+  width: 64px;          /* 가로와 세로를 같은 값으로 */
+  height: 64px;
+  border-radius: 50%;   /* 원형 */
+  border: none;
+  background: #ffa500;
+  cursor: pointer;
+  margin-right: 20px;
+  display: inline-flex; /* 아이콘 가운데 정렬 */
+  align-items: center;
+  justify-content: center;
+
+  /* flex 컨테이너에서 늘어남 방지 */
+  flex-grow: 0;   /* 남는 공간을 차지하지 않음 */
+  flex-shrink: 0; /* 줄어들지 않음 */
+  flex-basis: auto; /* 원래 요소 크기(또는 width/height) 기준 */
+  align-self: center;   /* 세로로 늘어지는 것 방지 */
+}
+.add-btn i{
+  font-size: 24px;
+  color: black;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+    border: 1px solid #bbb;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none; /* 사용자가 크기 조절 못하게 */
+}
+
+.post_caption {
+    margin: 0 0px;
+}
+.buttons {
+    display: flex;
+    margin: 20px 10px 30px 10px;
+    gap:10px;
+    justify-content: flex-end; /* 가로 왼쪽 정렬 */
+}
+
+.button1 input[type="submit"] {
+    background-color: #ffa500;
+    border: 4px solid #ffa500;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.button2 input[type="reset"] {
+    background-color: white;
+    border: 1px solid #ffa500;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-right: 20px;
+}

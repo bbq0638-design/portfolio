@@ -1,0 +1,403 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    align-items: center;
+    height: 120px;
+    z-index: 1;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+header .menu {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+    gap: 80px;
+    margin-top: 80px;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+header .menu li a:hover {
+    color: #ffbc4c;
+}
+
+
+header .login_status,
+header .logout_status {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: center;
+}
+
+
+header .login_status .profile_image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+header .login_status img {
+    width: 40px;
+    height: 40px;
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 180px;
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.profilebox{
+    margin-bottom: 30px;
+    width: 1100px;
+    height: 600px; /* 적절한 높이 조정 */
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.profile_pic_name_box{
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    gap: 40px;
+    width: 400px;
+}
+.profile_sumimg{
+    border-radius: 50%;
+    border: 3px #7C838A solid;
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* 이미지 비율 유지 및 채우기 */
+}
+.profile_name{
+    font-size: 300%;
+    width: fit-content;
+}
+.profile_edit_button{
+    position: absolute;
+    border: 3px solid #7C838A;
+    height: 50px;
+    width: 150px;
+    border-radius: 50px;
+    padding: 10px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    right: 0;
+}
+.profile_edit_button:hover{
+    background-color: #ffbc4c;
+}
+.profile_placebox{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.profile_placetitle{
+    text-align: center;
+    font-size: 200%;
+}
+.profile_placepicbox{
+    width: 550px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.profile_place_img{
+    width: 260px;
+    height: 290px;
+    object-fit: cover; /* 이미지 비율 유지 및 채우기 */
+}
+.profile_smallinfobox{
+    position: absolute;
+    display: flex;
+    gap: 30px;
+    height: fit-content;
+    right: 0;
+    top: 150px;
+}
+.profile_smallinfo_textbox{
+    display: grid;
+    text-align: center;
+    gap: 10px;
+    font-size: 150%;
+}
+.profile_smallinfo_text01{
+    font-weight: bold;
+}
+.profile_manner_scorebox{
+    display: grid;
+    height: fit-content;
+    gap: 10px;
+    position: absolute;
+    right: 0;
+    top: 300px;
+}
+.profile_manner_textbox{
+    display: flex;
+    justify-content: space-between;
+}
+.profile_progress_bar{
+    width: 450px;
+    height: 45px;
+    appearance: none;
+}
+.profile_progress_bar::-webkit-progress-bar{
+    background-color: #D9D9D9;
+    border-radius: 20px;
+}
+.profile_progress_bar::-webkit-progress-value{
+    background-color: #EF9D15;
+    border-radius: 20px;
+}
+.profile_manner_text{
+    font-size: 150%;
+    font-weight: bold;
+}
+.profile_tabbox{
+    border-top: 3px black solid;
+    border-bottom: 3px black solid;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 1100px;
+    gap: 20px;
+    padding: 10px 0;
+}
+.profile_peedbtn{
+    border-style: none;
+    font-size: 300%;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+.profile_infobox{
+    box-sizing: border-box;
+    width: 1100px;
+    padding: 15px;
+    height: fit-content;
+}
+#profile_picpeedbox{
+    position: relative;
+    display: block;
+}
+.profile_picpeed_imgbox{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.profile_picpeedimg{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    object-fit: cover; /* 이미지 비율 유지 및 채우기 */
+}
+.profile_addpicpeed_btn{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: #EF9D15;
+    font-size: 300%;
+    margin-top: 20px;
+    left: 1030px;
+    cursor: pointer;
+    font-weight: bold;
+}
+footer{
+    background-color: #7C838A;
+    width: 100%;
+    height: 200px;
+}
+#profile_userpeedbox{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.profile_userinfobox{
+    width: 50%;
+}
+/* 반려동물 캐러셀 래퍼 */
+.pet_carousel_wrapper {
+    width: 50%; /* 이 섹션이 차지할 전체 너비 */
+    overflow: hidden; /* 스크롤바 숨김 */
+    position: relative; /* 버튼 배치를 위해 */
+    margin-bottom: 30px;
+}
+
+/* 모든 반려동물 프로필 컨테이너 */
+#pet_profiles_container {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* 슬라이드 애니메이션 */
+    width: 100%; /* 초기 너비 (JS에서 자식 수에 따라 조절될 수 있음) */
+}
+
+/* 개별 반려동물 프로필 박스 */
+.profile_petinfobox {
+    flex: 0 0 100%; /* 컨테이너 너비에 꽉 채우고 고정 */
+    /* width: 100%; */ /* 주석 처리 또는 제거 (flex 속성이 제어) */
+    box-sizing: border-box;
+}
+.profile_title_box{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.profile_detail_container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+}
+.profile_info_img{
+    width: 220px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px #7C838A solid;
+    object-fit: cover; /* 이미지 비율 유지 및 채우기 */
+}
+.profile_info_detail01{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 30px;
+}
+.profile_info_5001{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+.profile_info_title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.profile_info_detail_text{
+    font-size: 20px;
+}
+.profile_detail_container02{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+.profile_info_5002{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.mate_request_btn{
+    text-align: center;
+    margin-top: 40px;
+    background-color: #ffbc4c;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#tab_pic{
+    background: #ffbc4c;
+}
+.profile_btn02_box{
+    border-style: none;
+    width: fit-content;
+    border-radius: 50px;
+    font-size: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.profile_review_btn{
+    height: 60px;
+    border-style: none;
+    width: fit-content;
+    background-color: #ffbc4c;
+    border-radius: 50px;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.report_btn{
+    height: 60px;
+    border-style: none;
+    width: fit-content;
+    border-radius: 50px;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border: 2px #7C838A solid;
+}
+/* 반려동물 캐러셀 내비게이션 버튼 */
+.carousel_nav_btn {
+    position: absolute;
+    bottom: 0px; /* 적절한 위치 조정 */
+    right: 0px; /* 적절한 위치 조정 */
+    background-color: #ffbc4c;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.carousel_nav_btn:hover {
+    background-color: #e0a03d;
+}

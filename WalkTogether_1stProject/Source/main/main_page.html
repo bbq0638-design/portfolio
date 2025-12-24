@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>main_page</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../header/header.css">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <script src="main.js"></script>
+    <body>
+        <div class="container">
+        <header>
+            <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+            <ul class="logout_status">
+                <li class="login"><a href="../login/login_user.html">로그인</a></li>
+                <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+            </ul>
+            <ul class="login_status">
+                <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+                <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+                <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+                <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+            </ul>
+        </header>
+        <main>
+        <div class="main_page">
+            <img src="../image/main_img.png">
+            <div class="main_content">
+                <img src="../image/hover_img.png" onclick="location.href='../mate/mate_finder.html'">
+            </div>
+        </div>
+        </main>
+        </div>
+    <script src="../header/header.js"></script>
+    </body>
+</html>

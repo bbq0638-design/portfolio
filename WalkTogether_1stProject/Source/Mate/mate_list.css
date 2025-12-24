@@ -1,0 +1,164 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+}
+main{
+  font-family: "Noto Sans KR", system-ui, -apple-system, sans-serif;
+  align-items: center;
+  display: flex;
+  justify-content: center; /* 주축(가로) 정렬 */
+}
+
+/* ====== 상단 배너 ====== */
+.sub_header{
+  padding-top: 120px;
+
+  width:100%;
+  height:250px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+  font-weight:700;
+  background:#ffbc4c;
+}
+
+.mention {
+  text-align: center;
+}
+.find_mate{
+  width:1100px;
+  display:block;
+  justify-content: center;
+  margin-top:50px;
+}
+.mate_list{
+  display:flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+/*리스트 카드*/
+.list_1, .list_2, .list_3, .list_4, .list_5 {
+  display: grid;
+  grid-template-columns: 80px 1fr; /* 왼쪽 프로필, 오른쪽 내용 */
+  gap: 16px 24px;
+  align-items: start;
+  padding: 10px;
+  background: #fff;
+  border-bottom: solid 1px #7C838A;
+  width: 100%;
+  box-sizing: border-box; /* padding 포함 계산 */
+}
+
+.list_1 .profile_image,
+.list_2 .profile_image,
+.list_3 .profile_image,
+.list_4 .profile_image,
+.list_5 .profile_image {
+  grid-row: 1 / span 3; /* 이미지가 정보/키워드 높이를 따라가며 좌측 고정 */
+}
+
+.profile_image img{
+  width:90px;
+  height:90px;
+  border-radius: 50%;
+}
+
+.information_title{
+  font-weight: bold;
+}
+.find_mate {
+  border-top: 1.5px black solid;
+}
+
+.information{
+  display:flex;
+  gap:50px;
+  margin-left: 20px;
+}
+.keyword_button_wrap {
+  display: flex;
+  justify-content: space-between; /* 키워드는 왼쪽, 버튼은 오른쪽 */
+  align-items: center;            /* 세로 중앙 정렬 */
+  margin-top: 10px;
+}
+.pet_keyword{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  margin-right: 158px;
+  margin-left: 15px;
+}
+.human_keyword{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /*가로 가운데*/
+  align-items: center;  /*세로 가운데*/
+  gap: 70px;
+  margin-left: 37px;
+}
+
+/*키워드*/
+.pet_keyword_label label{
+  display: inline-block;
+  padding: 8px;
+  margin: 6px;
+  border: 2px solid #dc2626;
+  border-radius: 20px;
+  background-color: #fff;
+  width: 170px;
+  font-weight: 500;
+  border-color: #dc2626;  
+  text-align: center;
+}
+.human_keyword_label label{
+  display: inline-block;
+  padding: 8px;
+  margin: 6px;
+  width: 170px;
+  border: 2px solid #3b82f6;
+  border-radius: 20px;
+  background-color: #fff;
+  font-weight: 500;
+  border-color: #3b82f6;
+  text-align: center;
+}
+
+
+/*프로필 이동버튼*/
+.profile_button {
+  text-align: center;
+  margin-top: 0px;
+}
+
+.profile_button input[type="button"] {
+  background-color: #ffbc4c;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.pagination a {
+  text-decoration: none;
+  color: black;
+  font-size: 8px;
+  padding: 8px 10px;
+  border: 1px solid #7C838A;
+  border-radius: 4px;
+  margin: 10px 0 20px 0;
+}   
+#no1 {
+    background-color: #ffbc4c;
+    border: 1px solid #ffbc4c;
+    color: black;
+}

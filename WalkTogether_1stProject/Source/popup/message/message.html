@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메세지팝업창</title>
+    <link rel="stylesheet" href="message.css">
+    <script>
+        function popup1() {
+            window.open('../message_chat/message_chat01.html', '길동이채팅창', 'width=480px, height=700px, location=no');
+        }
+
+         function popup2() {
+            window.open('../message_chat/message_chat02.html', '쿠로채팅창', 'width=480px, height=700px, location=no');
+        }
+    </script>
+</head>
+<body>
+    <div id="header">
+        메세지 팝업
+    </div>
+    <ul class="message_list">
+        <li class="message_item">
+            <div class="profile">
+                <a href=""> <img class="profile_image" src="../../image/noimage.png" alt="대체이미지"></a>
+            </div>
+            <div class="message_content">
+                <strong>홍길동</strong>
+                <a href="" onclick="popup1();">홍길동님께서 산책메이트 신청을 하셨습니다</a>
+            </div>
+            <div class="message_time">
+                <span class="unread"></span>
+                오후 12:25
+            </div>
+        </li>
+        <li class="message_item">
+            <div class="profile">
+                <a href=""><img class="profile_image" src="../../image/kuro.png" alt="프로필이미지"></a>
+            </div>
+            <div class="message_content">
+                <strong>쿠로</strong>
+                <a href="" onclick="popup2()">오늘 즐거웠습니다!</a>
+            </div>
+            <div class="message_time">
+                <span class="unread"></span>
+                오전 11:20
+            </div>
+        </li>
+    </ul>
+    <script src="message.js"></script>
+</body>
+</html>

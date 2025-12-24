@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>우리걷개</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../header/header.css">
+        <link rel="stylesheet" href="review_form.css">
+    </head>
+    <body>
+        <header>
+            <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+            <ul class="logout_status">
+                <li class="login"><a href="../login/login_user.html">로그인</a></li>
+                <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+            </ul>
+            <ul class="login_status">
+                <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+                <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+                <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+                <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+            </ul>
+        </header>
+        <main>
+            <div class="sub_header" style="background:#FFBC4C;">
+                <h1>산책 후기 작성</h1>
+                <p>메이트와의 산책 후기를 작성하고,<br>
+                    매너점수를 부여해보세요</p>
+            </div>
+            <form>
+                <hr class="main_line">
+                <div class="review_form_main">
+                    <div class="review_form_title">
+                        <h1>쿠로님과의 산책은 어떠셨나요?</h1>
+                        <h3>후기를 작성하고 매너점수를 부여해보세요.</h3>
+                    </div><hr>
+                    <div class="review_form_content">
+                        <h1>후기 작성</h1>
+                        <textarea row="4" cols="50" placeholder="후기 작성..."></textarea><br>
+                        <select>
+                            <option value="1">집사가 너무 착하고, 댕댕이가 너무 귀여워요.</option>
+                        </select>
+                        <p>※ 후기 작성을 하지 않으면 선택 된 키워드가 후기에 등록됩니다.<br><br>
+                            ※ 욕설,저속한 표현, 신체나 외모를 비하하는 표현, 성희롱적 표현 등 상대방에게 위협이 되거나 <br>
+                            불쾌감을 주는 후기를 작성하면 제재 대상으로 서비스 이용이 제한 되고 정도에 따라 법적 조치가 됨을 알려드립니다. 
+                        </p>
+                        <br>
+                        <hr>
+                        <div class="score">
+                            <h1>매너점수</h1>
+                            <select>
+                                <option value="100">100</option>
+                                <option value="95">95</option>
+                                <option value="90">90</option>
+                                <option value="85">85</option>
+                                <option value="80">80</option>
+                                <option value="75">75</option>
+                                <option value="70">70</option>
+                                <option value="65">65</option>
+                                <option value="60">60</option>
+                                <option value="55">55</option>
+                                <option value="50" selected>50</option>
+                                <option value="45">45</option>
+                                <option value="40">40</option>
+                                <option value="35">35</option>
+                                <option value="30">30</option>
+                                <option value="25">25</option>
+                                <option value="20">20</option>
+                                <option value="15">15</option>
+                                <option value="10">10</option>
+                                <option value="5">5</option>
+                                <option value="0">0</option>
+                            </select>
+                            <p>※ 매너 점수를 부여하지 않으면 기본 점수 50점으로 부여됩니다.<br>
+                                ※ 양심껏 점수를 부여하여 깨끗하고 즐거운 메이트 문화를 만드는데 동참해주세요.
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="submit_button">
+                            <button type="button">작성완료</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <footer>
+            푸터  
+        </footer>
+    <script src="../header/header.js"></script>
+    <script>
+        document.querySelector(".submit_button button").addEventListener("click", function() {
+            alert("후기 작성이 완료되었습니다!");
+            location.href="review.html";
+        });
+    </script>
+    </body>
+</html>

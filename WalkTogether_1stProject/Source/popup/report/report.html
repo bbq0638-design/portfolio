@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="report.css">
+    <title>신고하기</title>
+</head>
+<body>
+    <div id="header">
+        신고하기
+    </div>
+    <form class="report_content">
+        <div class="report_select">
+            게시판
+            <select name="" id="">
+                <option value="">메이트 찾기</option>
+                <option value="">찾아주세요</option>
+                <option value="">플레이스</option>
+                <option value="">메세지</option>
+            </select>
+        </div>
+        <div class="report_radio">
+            <div class="radios">
+                <input type="radio" id="blame" name="report_reason" value="욕설/비난">
+                    <label for="blame">욕설/비난</label>
+            </div>
+            <div class="radios">
+                <input type="radio" id="wrong_content" name="report_reason" value="부적절한내용">
+                    <label for="wrong_content">부적절한 내용</label>
+            </div>
+            <div class="radios">
+                <input type="radio" id="advertisement" name="report_reason" value="광고의심계정">
+                    <label for="advertisement">광고 의심 계정</label>
+                </div>
+                <div class="radios">
+                <input type="radio" id="wrong_image" name="report_reason" value="부적절한이미지">
+                    <label for="wrong_image">부적절한 이미지</label>
+                </div>
+                <div class="radios">
+                <input type="radio" id="insult" name="report_reason" value="성희롱/모욕">
+                    <label for="insult">성희롱/모욕</label>
+                </div>
+        </div>
+        <div class="input_other">
+            <textarea name="" id="input_other" placeholder="신고 내용 직접 입력"></textarea>
+        </div>
+        <div class="input_content">
+            <textarea name="" id="input_content" placeholder="상세 내용 입력"></textarea>
+        </div>
+        <div class="report_button">
+            <button id="cancel" onclick="window.close()">취소하기</button>
+            <button id="submit_report" onclick="alert('신고가 접수되었습니다.'), window.close()">신고하기</button>
+        </div>
+    </form>
+</body>
+</html>

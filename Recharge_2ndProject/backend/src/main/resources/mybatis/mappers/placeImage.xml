@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.recharge.backend.placeImage.dao.PlaceImageDAO">
+
+    <select id="findImageByName" resultType="com.recharge.backend.placeImage.vo.PlaceImageVO">
+        SELECT PLACE_NAME AS placeName,
+        IMAGE_URL AS imageUrl
+        FROM TB_PLACE_IMAGE
+        WHERE PLACE_NAME = #{placeName}
+    </select>
+
+    <insert id="insertImage" parameterType="com.recharge.backend.placeImage.vo.PlaceImageVO">
+        INSERT INTO TB_PLACE_IMAGE (
+        PLACE_NAME,
+        IMAGE_URL
+        ) VALUES (
+        #{placeName},
+        #{imageUrl}
+        )
+    </insert>
+
+</mapper>

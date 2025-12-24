@@ -1,0 +1,201 @@
+main {
+    padding-top: 130px;   /* 헤더 고정이므로 위쪽 여백 */
+    margin: 0 150px 150px; /* 좌우·하단 여백 */
+}
+
+/* 상단 큰 배너 (관리자 페이지 타이틀 영역) */
+.sub_header img{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 auto;
+    background-color: #ffbc4c;
+}
+
+#lost_detail_image {
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+}
+
+#main_image img {
+    height: 300px;
+    width: 300px;
+}
+
+.sub_image img {
+    height: 100px;
+    width: 100px;
+}
+
+.share .share_image li {
+    display: inline;
+}
+
+.share .share_image button {
+    background: none;
+    border: none;
+}
+
+.share .share_image li img{
+    height: 30px;
+    width: 30px
+}
+
+#lost_detail_image {
+  display: flex;
+  gap: 40px;
+  margin: 40px 0;
+}
+#main_image img {
+  border-radius: 8px;
+  object-fit: cover;
+}
+.sub_image {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 12px;
+}
+.sub_image img {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #fafafa;
+}
+
+/* ====== 기본정보 테이블 ====== */
+#lost_detail_information {
+  border-top: 2px solid #000;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+  margin: 32px 0;
+}
+.lost_detail_table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.lost_detail_table td {
+  padding: 10px;
+  vertical-align: middle;
+}
+.table_main {
+  font-weight: 700;
+  background: #fafafa;
+  text-align: center;
+  border-right: 1px solid #eee;
+}
+.table_sub {
+  border-right: 1px solid #eee;
+}
+.lost_detail_table tr + tr td {
+  border-top: 1px solid #eee;
+}
+
+/* ====== 상세설명 영역 ====== */
+#lost_detail_description {
+  margin: 32px 0;
+}
+#lost_detail_description h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+#lost_detail_description .edit_placetextbox {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fafafa;
+}
+.place_textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-size: 14px;
+  line-height: 1.5;
+  background: transparent;
+}
+
+/* ====== 공유하기 ====== */
+.share {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 20px 0 40px;
+  font-size: 14px;
+}
+.share_title {
+  margin-right: 8px;
+  font-weight: 600;
+}
+.share .share_image {
+  display: flex;
+  gap: 8px;
+}
+.share .share_image img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+/* ====== 댓글 ====== */
+.chat {
+  margin: 32px 0;
+  border-top: 2px solid #000;
+  padding-top: 20px;
+}
+.chat_title {
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+.message_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.message_item .profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.your_message {
+  background: #f1f1f1;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 60%;
+  font-size: 14px;
+}
+.message_time {
+  font-size: 12px;
+  color: #888;
+  align-self: flex-end;
+  margin-left: auto;
+}
+.chatting-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px 10px;
+  gap: 8px;
+}
+.chatting-box input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+.chatting-box button img {
+  width: 20px;
+  height: 20px;
+}

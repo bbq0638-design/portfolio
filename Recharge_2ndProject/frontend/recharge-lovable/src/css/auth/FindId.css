@@ -1,0 +1,191 @@
+.find_id_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 60px 40px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.find_id_header {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.find_id_header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.find_id_subtitle {
+  font-size: 17px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.find_id_form_container {
+  width: 100%;
+  background: var(--bg-white);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+}
+
+.find_id_radio_group {
+  margin-bottom: 30px;
+}
+
+.find_id_radio_option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 12px 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.find_id_radio_option:hover {
+  border-color: var(--primary-color);
+  background: rgba(0, 78, 137, 0.05);
+}
+
+.find_id_radio_option input[type="radio"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.find_id_radio_option input[type="radio"]:checked {
+  border-color: var(--primary-color);
+  background: var(--primary-color);
+}
+
+.find_id_radio_option input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
+.find_id_radio_option span {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.find_id_form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.find_id_form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.find_id_form_label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.find_id_input_name,
+.find_id_input_email {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+.find_id_input_name:focus,
+.find_id_input_email:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(0, 78, 137, 0.1);
+}
+
+.find_id_input_name::placeholder,
+.find_id_input_email::placeholder {
+  color: var(--text-light);
+}
+
+.find_id_btn {
+  width: 100%;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #004E89 0%, #0066b3 100%);
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  letter-spacing: -0.01em;
+}
+
+.find_id_btn:hover {
+  background: linear-gradient(135deg, #0066b3 0%, #0080d4 100%);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.find_id_btn:active {
+  transform: translateY(0);
+}
+
+.find_id_btn a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 100%;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .find_id_main {
+    padding: 40px 20px;
+  }
+
+  .find_id_header h1 {
+    font-size: 28px;
+  }
+
+  .find_id_subtitle {
+    font-size: 15px;
+  }
+
+  .find_id_form_container {
+    padding: 30px 20px;
+  }
+}

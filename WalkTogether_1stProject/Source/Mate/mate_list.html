@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <title>메이트 찾기 리스트</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../header/header.css">
+        <link rel="stylesheet" href="mate_list.css">
+    </head>
+    <body>
+        <header>
+            <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+            <ul class="logout_status">
+                <li class="login"><a href="../login/login_user.html">로그인</a></li>
+                <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+            </ul>
+            <ul class="login_status">
+                <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+                <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+                <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+                <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+            </ul>
+        </header>
+
+    <div class="sub_header">
+        <div class="mention">
+            <h1>당신이 찾은 메이트</h1>
+            <p>프로필 피드를 확인하고, 메이트 신청을 해보아요!</p>
+        </div>
+    </div>
+    <main>
+        <div class="find_mate">
+            <div class="mate_list">
+                <div class="list_1">
+                    <div class="profile_image">
+                        <img src="/image/kong.jpg" alt="프로필이미지">
+                    </div>
+                    <div class="information">
+                        <div class="information_title">
+                            이름
+                        </div>
+                        <div class="information_sub">
+                            콩이
+                        </div>
+                        <div class="information_title">
+                            나이
+                        </div>
+                        <div class="information_sub">
+                            5살
+                        </div>
+                        <div class="information_title">
+                            성별
+                        </div>
+                        <div class="information_sub">
+                            여자    
+                        </div>
+                        <div class="information_title">
+                            견종
+                        </div>
+                        <div class="information_sub">
+                            비숑
+                        </div>
+                    </div> 
+                <div class="pet_keyword">
+                    <div class="pet_keyword_label">
+                        <label for="snore">주변 냄새만 맡아요</label>
+                    </div>
+                    <div class="pet_keyword_label">
+                        <label for="want_social">사회화 훈련을 하고싶어요</label>
+                    </div>
+                    <div class="pet_keyword_label">
+                        <label for="1hour">30분 ~ 1시간</label>
+                    </div>
+                </div>
+                <div class="human_keyword">
+                    <div class="human_keyword_label">
+                        <label for="entp">ENTP</label>
+                    </div>
+                    <div class="human_keyword_label">
+                        <label for="talkative">재잘재잘</label>
+                    </div>
+                    <div class="human_keyword_label">
+                        <label for="hobby">취미 공유</label>
+                    </div>
+            <!--프로필 이동버튼-->
+                    <div class="profile_button">
+                        <input type="button" onclick="location.href='../profile/profile.html'" value="프로필 이동">
+                    </div>               
+                </div>
+                </div>
+            <!--리스트 2-->  
+                <div class="list_2">
+                    <div class="profile_image">
+                        <img src="/image/ggong.png" alt="프로필이미지">
+                    </div>
+                    <div class="information">
+                        <div class="information_title">
+                            이름
+                        </div>
+                        <div class="information_sub">
+                            공주
+                        </div>
+                        <div class="information_title">
+                            나이
+                        </div>
+                        <div class="information_sub">
+                            12살
+                        </div>
+                        <div class="information_title">
+                            성별
+                        </div>
+                        <div class="information_sub">
+                            여자    
+                        </div>
+                        <div class="information_title">
+                            견종
+                        </div>
+                        <div class="information_sub">
+                            말티즈
+                        </div>
+                    </div> 
+                <div class="pet_keyword">
+                    <div class="pet_keyword_label">
+                        <label for="snore">주변 냄새만 맡아요</label>
+                    </div>
+                    <div class="pet_keyword_label">
+                        <label for="timid">소심함</label>
+                    </div>
+                    <div class="pet_keyword_label">
+                        <label for="1hour">30분 ~ 1시간</label>
+                    </div>
+                </div>
+                <div class="human_keyword">
+                    <div class="human_keyword_label">
+                        <label for="esfp">ESFP</label>
+                    </div>
+                    <div class="human_keyword_label">
+                        <label for="hobby">취미 공유</label>
+                    </div>
+                    <div class="human_keyword_label">
+                        <label for="gym">애견운동장</label>
+                    </div>
+                    <div class="profile_button">
+                        <input type="button" onclick="location.href='../profile/profile.html'" value="프로필 이동">
+                    </div>               
+                </div>
+                </div>
+            <!--리스트 3-->  
+            <div class="list_3">
+                <div class="profile_image">
+                    <img src="/image/bigeye.png" alt="프로필이미지">
+                </div>
+                <div class="information">
+                    <div class="information_title">
+                        이름
+                    </div>
+                    <div class="information_sub">
+                        땅콩
+                    </div>
+                        <div class="information_title">
+                        나이
+                    </div>
+                    <div class="information_sub">
+                        8개월
+                    </div>
+                    <div class="information_title">
+                        성별
+                    </div>
+                    <div class="information_sub">
+                        남자    
+                    </div>
+                    <div class="information_title">
+                        견종
+                    </div>
+                    <div class="information_sub">
+                        셀티
+                    </div>
+                </div> 
+                <div class="pet_keyword">
+                    <div class="pet_keyword_label">
+                        <label for="like_run">뛰는게 좋아요</label>
+                    </div>
+                    <div class="pet_keyword_label">
+                        <label for="want_social">사회화 훈련을 하고싶어요</label>
+                    </div>
+                    <div class="pet_keyword_label">
+                        <label for="1hour">1시간 ~ 1시간 30분</label>
+                    </div>
+                </div>
+                <div class="human_keyword">
+                    <div class="human_keyword_label">
+                        <label for="enfj">ENFJ</label>
+                    </div>
+                    <div class="human_keyword_label">
+                        <label for="talkative">재잘재잘</label>
+                    </div>
+                    <div class="human_keyword_label">
+                        <label for="night">밤</label>
+                    </div>
+                    <div class="profile_button">
+                        <input type="button" onclick="location.href='../profile/profile.html'" value="프로필 이동">
+                    </div>               
+                </div>
+                </div>
+            <!--리스트 4-->  
+            <div class="list_4">
+                <div class="profile_image">
+                    <img src="/image/dg.jpg" alt="프로필이미지">
+                </div>
+                <div class="information">
+                    <div class="information_title">
+                        이름
+                    </div>
+                    <div class="information_sub">
+                        딸기
+                    </div>
+                        <div class="information_title">
+                        나이
+                    </div>
+                    <div class="information_sub">
+                        4살
+                    </div>
+                    <div class="information_title">
+                        성별
+                    </div>
+                    <div class="information_sub">
+                        여자    
+                    </div>
+                    <div class="information_title">
+                        견종
+                    </div>
+                    <div class="information_sub">
+                        말티즈
+                    </div>
+                </div> 
+                <div class="pet_keyword">
+                    <div class="pet_keyword_label">
+                        <label for="lively">활발함</label>
+                    </div>
+                    <div class="pet_keyword_label">
+                        <label for="sociable">사교적</label>
+                    </div>
+                    <div class="pet_keyword_label">
+                        <label for="2hour">1시간 30분 ~ 2시간</label>
+                    </div>
+                </div>
+                <div class="human_keyword">
+                    <div class="human_keyword_label">
+                        <label for="istj">ISTJ</label>
+                    </div>
+                    <div class="human_keyword_label">
+                        <label for="evening">저녁</label>
+                    </div>
+                    <div class="human_keyword_label">
+                        <label for="foodfinder">맛집탐방</label>
+                    </div>
+                    <div class="profile_button">
+                        <input type="button" onclick="location.href='../profile/profile.html'" value="프로필 이동">
+                    </div>               
+                </div>
+                </div>
+            <!--리스트 5-->  
+            <div class="list_5">
+                <div class="profile_image">
+                    <img src="/image/dino.jpg" alt="프로필이미지">
+                </div>
+                <div class="information">
+                    <div class="information_title">
+                        이름
+                    </div>
+                    <div class="information_sub">
+                        공룡
+                    </div>
+                        <div class="information_title">
+                        나이
+                    </div>
+                    <div class="information_sub">
+                        1살
+                    </div>
+                    <div class="information_title">
+                        성별
+                    </div>
+                    <div class="information_sub">
+                        남자    
+                    </div>
+                    <div class="information_title">
+                        견종
+                    </div>
+                    <div class="information_sub">
+                        믹스
+                    </div>
+                </div> 
+                <div class="pet_keyword">
+                    <div class="pet_keyword_label">
+                        <label for="no_interest">강아지는 관심 없어요</label>
+                    </div>
+                    <div class="pet_keyword_label">
+                        <label for="want_social">사회화 훈련을 하고싶어요</label>
+                    </div>
+                    <div class="pet_keyword_label">
+                        <label for="1hour">30분 ~ 1시간</label>
+                    </div>
+                </div>
+                <div class="human_keyword">
+                    <div class="human_keyword_label">
+                        <label for="entp">ENTP</label>
+                    </div>
+                    <div class="human_keyword_label">
+                        <label for="foodfinder">맛집탐방</label>
+                    </div>
+                    <div class="human_keyword_label">
+                        <label for="gym">애견운동장</label>
+                    </div>
+                    <div class="profile_button">
+                        <input type="button" onclick="location.href='../profile/profile.html'" value="프로필 이동">
+                    </div>               
+                </div>
+                </div>
+             
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#" id="no1">1</a>
+            <a href="#" id="no2">2</a>
+            <a href="#">&raquo;</a>
+        </div>               
+
+            </div>
+        </div>
+    </main>
+    <script src="../header/header.js"></script>
+</body>
+</html>

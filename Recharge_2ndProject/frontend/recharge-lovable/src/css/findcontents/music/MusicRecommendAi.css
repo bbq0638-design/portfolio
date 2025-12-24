@@ -1,0 +1,206 @@
+.airprompt_overlay {
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    z-index: 9998;
+}
+
+.airprompt_modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    z-index: 9999;
+    width: min(720px, 95%);
+    max-height: 85vh;
+    overflow: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    padding: 1.25rem 1.25rem 1.5rem;
+}
+
+/* 헤더 */
+.airprompt_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.airprompt_header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.airprompt_icon_btn {
+    border: #fff;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0.35rem;
+}
+
+/* 탭 */
+.airprompt_tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.airprompt_tab {
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s ease;
+}
+.airprompt_tab.active {
+    border-color: #004e89;
+    background-color: #004e89;
+    color: white;
+}
+.airprompt_tab:hover {
+    background: #004e89;
+    color: white;
+}
+
+
+.airprompt_form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.airprompt_input {
+    flex: 1;
+    height: 42px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0 0.75rem;
+}
+
+.airprompt_submit {
+    height: 42px;
+    min-width: 110px;
+    border: none;
+    border-radius: 8px;
+    background: #004e89;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+/* 빈 상태 */
+.airprompt_empty {
+    grid-column: 1 / -1;
+    height: 200px;
+    width: 680px;
+    padding: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #6c7782;
+    border: 1px dashed #e0e4e8;
+    border-radius: 8px;
+    background: #f8f8f9;
+}
+
+
+/* ===== 음악 카드 ===== */
+.airprompt_music_lists {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.airprompt_music_list {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #004e89;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.18);
+    transition: transform 0.25s ease;
+}
+
+.airprompt_music_list:hover {
+    transform: translateY(-5%);
+}
+
+
+.airprompt_cover_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.airprompt_fav_btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.airprompt_fav_btn.outline {
+    background: rgba(0,0,0,0.45);
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.airprompt_fav_btn.outline:hover {
+    background: rgba(0,0,0,0.65);
+    transform: scale(1.05);
+}
+.airprompt_fav_btn.primary {
+    background: rgba(0,0,0,0.6);
+    color: #F4C10F;
+    border: 1px solid rgba(244,193,15,0.6);
+}
+.airprompt_fav_btn.primary:hover {
+    background: rgba(0,0,0,0.75);
+    transform: scale(1.07);
+}
+
+.airprompt_music_info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 8px;
+    background: #004e89;
+    color: #fff;
+}
+
+.airprompt_title {
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: left;
+    display: block;
+}
+
+.airprompt_artist {
+    opacity: 0.9;
+    font-size: 0.85rem;
+    text-align: left;
+    display: block;
+}

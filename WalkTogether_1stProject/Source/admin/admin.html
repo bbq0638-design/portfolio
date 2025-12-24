@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>관리자페이지</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../header/header.css">
+        <link rel="stylesheet" href="admin.css">
+        <script>
+            function popup_message() {
+                window.open('../../popup/message/message.html', '메세지채팅창', 'width=480px, height=700px, location=no');
+            }
+            function popup_notice() {
+                window.open('../../popup/notification/notification.html', '알림창', 'width=480px, height=700px, location=no');
+            }
+        </script>
+    </head>
+    <body>
+
+
+        <header>
+            <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+
+        </header>
+
+        <main>
+            <div class="sub_header">
+                관리자 페이지
+            </div>
+            <div class="admin_menu">
+                <div class="admin_profile">
+                    <img src="../image/noimage.png" alt="프로필이미지">
+                    <div class="admin_id">
+                        관리자01
+                    </div>
+                </div>
+                <div class="admin_member">
+                    <a href="admin.html">회원관리</a>
+                </div>
+                <div class="admin_board">
+                    <a href="admin_board.html">게시판 관리</a>
+                </div>
+                <div class="admin_notice">
+                    <a href="admin_notice.html">공지글 작성</a>
+                </div>
+            </div>
+            <div class="admin_list">
+                <h2>회원 관리</h2>
+                <form action="" id="formbox1">
+                    <select name="member_select" id="member_select">
+                        <option value="name">이름</option>
+                        <option value="nickname">닉네임</option>
+                    </select>
+                    <input type="text">
+                    <div class="submit_button">
+                        <input type="submit" value="검색">                      
+                    </div>
+                </form>
+                <form action="" id="formbox2">
+                    <div class="member_date">
+                        가입일
+                        <input type="date"> ~ <input type="date">
+                    </div>
+                    <div class="restricted">
+                        제한 사항
+                        <select name="restricted" id="restricted">
+                            <option value="없음">없음</option>
+                            <option value="게시글 작성">게시글 작성 제한</option>
+                            <option value="메세지 요청">메시지 요청 제한</option>
+                            <option value="댓글 작성">댓글 작성 제한</option>
+                        </select>
+                    </div>
+                    <div class="submit_button">
+                        <input type="submit" value="상세 검색">                      
+                    </div>
+                </form>
+                <table border="0" style="width: 100%; text-align: center; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th>선택</th>
+                        <th>번호</th>
+                        <th>이름</th>
+                        <th>닉네임</th>
+                        <th>아이디</th>
+                        <th>제한사항</th>
+                        <th>가입일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">11</td>
+                        <td class="name">김민준</td>
+                        <td class="nickname">치즈강아지</td>
+                        <td class="user_id">minjun01</td>
+                        <td class="restrict">없음</td>
+                        <td class="join_date">2025-08-31</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">10</td>
+                        <td class="name">이현우</td>
+                        <td class="nickname">푸들러버</td>
+                        <td class="user_id">mlhw2</td>
+                        <td class="restrict">게시글 작성</td>
+                        <td class="join_date">2025-08-31</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">9</td>
+                        <td class="name">김서윤</td>
+                        <td class="nickname">댕댕수호자</td>
+                        <td class="user_id">yoonn9</td>
+                        <td class="restrict">없음</td>
+                        <td class="join_date">2025-08-31</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">8</td>
+                        <td class="name">박하린</td>
+                        <td class="nickname">깜자</td>
+                        <td class="user_id">haaaaaaaryn</td>
+                        <td class="restrict">없음</td>
+                        <td class="join_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">7</td>
+                        <td class="name">최유진</td>
+                        <td class="nickname">꼬리살랑</td>
+                        <td class="user_id">minjun01</td>
+                        <td class="restrict">없음</td>
+                        <td class="join_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">6</td>
+                        <td class="name">박지호</td>
+                        <td class="nickname">꼬질말티</td>
+                        <td class="user_id">jihooo</td>
+                        <td class="restrict">없음</td>
+                        <td class="join_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">5</td>
+                        <td class="name">정수아</td>
+                        <td class="nickname">카마</td>
+                        <td class="user_id">suuuu1</td>
+                        <td class="restrict">메세지 요청</td>
+                        <td class="join_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">4</td>
+                        <td class="name">이지아</td>
+                        <td class="nickname">누렁이</td>
+                        <td class="user_id">ahe2</td>
+                        <td class="restrict">댓글 작성</td>
+                        <td class="join_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">3</td>
+                        <td class="name">김지호</td>
+                        <td class="nickname">해피</td>
+                        <td class="user_id">jiho99</td>
+                        <td class="restrict">게시글 작성</td>
+                        <td class="join_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">2</td>
+                        <td class="name">윤다혜</td>
+                        <td class="nickname">꼬순내</td>
+                        <td class="user_id">daaaa03</td>
+                        <td class="restrict">없음</td>
+                        <td class="join_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">1</td>
+                        <td class="name">한지민</td>
+                        <td class="nickname">차우차우</td>
+                        <td class="user_id">jimin1</td>
+                        <td class="restrict">없음</td>
+                        <td class="join_date">2025-08-29</td>
+                    </tr>
+                </tbody>
+                </table>
+                <div class="restrict_action">
+                    <select name="restricted" id="restricted">
+                        <option value="없음">없음</option>
+                        <option value="게시글 작성">게시글 작성 제한</option>
+                        <option value="메세지 요청">메시지 요청 제한</option>
+                        <option value="댓글 작성">댓글 작성 제한</option>
+                    </select>
+                    <div class="buttons">
+                        <div class="button1">
+                            <input type="submit" value="적용">
+                        </div>
+                        <div class="button2">
+                            <input type="submit" value="선택탈퇴">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+    <script src="../header/header.js"></script>
+    </body>
+</html>

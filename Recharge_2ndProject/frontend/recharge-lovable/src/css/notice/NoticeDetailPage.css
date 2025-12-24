@@ -1,0 +1,170 @@
+
+/* ===== 공지사항게시판 공통 래퍼 ===== */
+.notice_board-wrapper {
+  min-height: calc(100vh - 200px);
+  padding: 60px 40px;
+  
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.notice_board-header {
+position :relative;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notice_board-header::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0px;
+  right: 0px;
+  height: 3px;
+  background: #004E89; 
+  border-radius: 2px;
+}
+
+.notice_board-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #004E89;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+
+/* ===== 공지사항상세페이지 전체 ===== */
+/* ===== 공지사항상세페이지 전체 ===== */
+/* ===== 공지사항상세페이지 전체 ===== */
+
+.notice_detail-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 45px;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border: 1px solid #e0e0e0;
+}
+
+/* ===== 게시글 헤더 ===== */
+.notice_detail-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 3px solid #e0e0e0;
+  margin-bottom: 28px;
+}
+
+.notice_detail-header h2 {
+   margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  flex: 1;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.notice_detail-meta {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 15px;
+  color: #666666;
+}
+
+
+/* ===== 게시글 본문 ===== */
+.notice_detail-content {
+  margin-top: 35px;
+  line-height: 1.85;
+  font-size: 17px;
+  color: #1a1a1a;
+  min-height: 30vh;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+/* ===== 이전/다음 글 네비게이션 ===== */
+.notice_detail-nav {
+  width: 100%;
+  border-top: 2px solid #E5E5E7;
+  border-bottom: 2px solid  #E5E5E7;
+  margin-top: 20px;
+}
+
+.notice_nav-section {
+  display: flex;
+  align-items: left-end;
+  justify-content: space-between; /* 오른쪽 끝에 날짜 배치 */
+  padding: 14px 10px;
+  border-bottom: 2px solid  #E5E5E7;
+}
+
+.notice_nav-section:last-child {
+  border-bottom: none;
+}
+
+.notice_nav-section:hover {
+  background: rgba(0, 78, 137, 0.05);
+}
+
+.notice_nav-label {
+  width: 80px;
+  font-size: 15px ;
+  color:  #1a1a1a;
+  flex-shrink: 0;
+  font-weight: 500;
+  
+}
+
+.notice_nav-item {
+  flex: 1; /* 남은 공간을 채우기 */
+  cursor: pointer;
+  color: #666666;
+  font-size: 15px;
+  transition: color 0.2s;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.notice_nav-item.disabled {
+  color: #aaa;
+  cursor: default;
+}
+
+/* 오른쪽 끝 날짜 */
+.notice_nav-date {
+  font-size: 14px;
+  color: #777;
+  flex-shrink: 0;
+}
+
+/* ===== 하단 버튼 ===== */
+.notice_detail-bottom {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.notice_back-btn {
+  background: #004e89;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.notice_back-btn:hover {
+  background: #003866;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}

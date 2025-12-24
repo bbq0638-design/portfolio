@@ -1,0 +1,79 @@
+
+main {
+        padding-top: 130px;
+        margin: 0 150px 150px;
+    } 
+
+
+/*서브헤더*/
+.sub_header {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.sub_header::before {
+    content: "";
+    display: block;
+    width: 120px;
+    border-top: 2px solid #7C838A;
+    margin-bottom: 1px; /* 선과 글자 사이 간격 */
+
+}
+
+.sub_header h2 {
+    margin: 0; /* margin-top 제거 */
+}
+
+
+/*테이블*/
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table thead th {
+    border-top: 2px double #000;   /* 위쪽 선 */
+    border-bottom: 1px solid #000; /* 아래쪽 선 */
+    padding: 10px;
+}
+table tbody td {
+    border-bottom: 1px solid #ccc; /* 아래쪽 선 */
+}
+                .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+table tbody tr a{
+    text-decoration: none;
+    color: black;
+}
+table tbody tr .no , table tbody tr .date{
+    color:#7C838A;
+}
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+.pagination a {
+    text-decoration: none;
+    color: black;
+    font-size: 8px;
+    padding: 8px 10px;
+    border: 1px solid #7C838A;
+    border-radius: 4px;
+}
+#no1 {
+    background-color: #979797;
+    border: 1px solid #7C838A;
+    color: black;
+}

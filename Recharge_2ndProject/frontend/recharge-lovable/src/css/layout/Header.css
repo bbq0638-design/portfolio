@@ -1,0 +1,219 @@
+.nav_container {
+  height: 80px;
+  width:100%;
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+  background: var(--bg-white);
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid var(--border-color);
+  top: 0;
+}
+
+.nav_logo {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.nav_logo:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  width: 130px;
+  height: auto;
+}
+
+.header_nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  margin: 0 40px;
+}
+
+.content_nav {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.header_nav a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+  letter-spacing: -0.01em;
+}
+
+.header_nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.header_nav a:hover {
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.header_nav a:hover::after {
+  width: 70%;
+}
+
+.content_nav li {
+  display: flex;
+  align-items: center;
+}
+
+.auth_nav {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.auth_nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.auth_nav a:first-child {
+  color: black;
+  background: transparent;
+  border: 1.5px solid transparent;
+  position: relative;
+}
+
+.auth_nav a:first-child::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.auth_nav a:first-child:hover {
+  color: black;
+  background: var(--bg-white);
+  border-color: transparent;
+}
+
+.auth_nav a:last-child {
+  color: var(--bg-white);
+  background: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0, 78, 137, 0.2);
+  border: 1.5px solid var(--primary-color);
+}
+
+.auth_nav a:last-child:hover {
+  background: var(--bg-white);
+  border-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 78, 137, 0.3);
+}
+
+.auth_nav button {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 18px;
+  border: 1.5px solid transparent;
+  background: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+}
+
+.auth_nav button::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.auth_nav button:hover {
+  color: white;
+  background: transparent;
+  border-color: transparent;
+}
+
+.auth_nav button:hover::after {
+  width: 70%;
+}
+.content_nav li span {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.3s ease;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+}
+
+.content_nav li span::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.content_nav li span:hover {
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.content_nav li span:hover::after {
+  width: 70%;
+}

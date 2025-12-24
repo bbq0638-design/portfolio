@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.recharge.backend.users.dao.UsersDAO">
+
+    <!-- 아이디 중복 확인 -->
+    <select id="countUserId" parameterType="String" resultType="int">
+        SELECT COUNT(*) FROM TB_USERS WHERE USER_ID = #{userId}
+    </select>
+
+    <!-- 이메일 중복 확인 -->
+    <select id="countUserEmail" parameterType="String" resultType="int">
+        SELECT COUNT(*) FROM TB_USERS WHERE USER_EMAIL = #{userEmail}
+    </select>
+
+    <!-- 회원가입 -->
+    <insert id="insertUser" parameterType="com.recharge.backend.users.vo.UsersVO">
+        INSERT INTO TB_USERS (
+        USER_ID,
+        USER_PWD,
+        USER_EMAIL,
+        USER_NAME,
+        USER_BIRTH,
+        USER_GENDER,
+        USER_PHONE,
+        USER_CARMODEL,
+        CREATE_DATE,
+        CREATE_ID,
+        UPDATED_DATE
+        ) VALUES (
+        #{userId},
+        #{userPwd},
+        #{userEmail},
+        #{userName},
+        #{userBirth},
+        #{userGender},
+        #{userPhone},
+        #{userCarmodel},
+        SYSDATE,
+        #{userId},
+        SYSDATE
+        )
+    </insert>
+
+    <select id="findUserById" resultType="com.recharge.backend.users.vo.UsersVO">
+        SELECT * FROM TB_USERS
+        WHERE USER_ID = #{userId}
+    </select>
+
+    <select id="selectUserByNameAndEmail" resultType="UsersVO">
+        SELECT USER_ID, USER_NAME, USER_EMAIL
+        FROM TB_USERS
+        WHERE USER_NAME = #{name}
+          AND USER_EMAIL = #{email}
+    </select>
+
+    <select id="selectUserByIdNameEmail" resultType="UsersVO" parameterType="map">
+        SELECT * FROM TB_USERS
+        WHERE USER_ID=#{id, jdbcType=VARCHAR}
+          AND USER_NAME=#{name, jdbcType=VARCHAR}
+          AND USER_EMAIL=#{email, jdbcType=VARCHAR}
+    </select>
+
+    <update id="updatePasswordByToken">
+        UPDATE TB_USERS
+        SET USER_PWD = #{newPwd},
+            USER_MODIFY_TOKEN = NULL,
+            UPDATED_ID = #{userId},
+            UPDATED_DATE = SYSDATE
+        WHERE USER_MODIFY_TOKEN = #{token}
+    </update>
+
+    <select id="findUserByResetToken" resultType="com.recharge.backend.users.vo.UsersVO">
+        SELECT *
+        FROM TB_USERS
+        WHERE USER_MODIFY_TOKEN=#{token}
+    </select>
+
+    <update id="saveResetToken">
+        UPDATE TB_USERS
+        SET USER_MODIFY_TOKEN = #{token}
+        WHERE USER_ID = #{userId}
+    </update>
+
+    <update id="updateUser" parameterType="com.recharge.backend.users.vo.UsersVO">
+        UPDATE TB_USERS
+        SET
+        USER_NAME = #{userName},
+        USER_EMAIL = #{userEmail},
+        USER_BIRTH = TO_DATE(#{userBirth}, 'YYYY-MM-DD'),
+        USER_PHONE = #{userPhone},
+        USER_CARMODEL = #{userCarmodel},
+        USER_PWD = #{userPwd}, <!-- ServiceImpl에서 변경 여부를 판단하여 인코딩된 값을 설정함 -->
+        UPDATED_ID = #{userId},
+        UPDATED_DATE = SYSDATE
+        WHERE
+        USER_ID = #{userId}
+    </update>
+
+</mapper>

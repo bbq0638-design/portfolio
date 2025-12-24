@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Profile_Edit.css">
+    <title>프로필 수정</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+        <ul class="menu">
+            <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+            <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+            <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+            <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+        </ul>
+        <ul class="logout_status">
+            <li class="login"><a href="../login/login_user.html">로그인</a></li>
+            <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+        </ul>
+        <ul class="login_status">
+            <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+            <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+            <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+            <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+        </ul>
+    </header>
+    <div class="sub_header">
+        <span class="sub_header_text01">프로필 수정</span><br>
+        <span class="sub_header_text02">더 많은 정보를 입력할수록 매칭률이 올라가요!</span>
+    </div>
+    <div class="main">
+        <div class="tabbox">
+            <span class="tab_text" id="user_profile">집사 프로필</span>
+            <span class="tab_text" id="pet_profile">반려동물 프로필</span>
+        </div>
+        <form class="userform" id="userform_id">
+            <div class="userform_box">
+                <div class="userdetail01">
+                    <div style="position: relative;">
+                        <label for="userpic_upload" class="userpic_label" id="userpic_label_id">
+                            <input type="file" class="userpic_file" id="userpic_upload">
+                            <img class="userimg" id="userimg_id" src="../image/noimage.png">
+                        </label>
+                        <button class="userpic_dbtn" id="userpic_dbtn_id">X</button>
+                    </div>
+                    <div class="userdetail01_container">
+                        <div class="userdetail01_box">
+                            <span class="userdetail_title"><span class="point">*</span>이름</span>
+                            <input class="userdetail01_textbox" type="text" placeholder="이름을 입력해주세요.">
+                        </div><br><br>
+                        <div class="userdetail01_box">
+                            <span class="userdetail_title"><span class="point">*</span>나이</span>
+                            <input class="userdetail01_textbox" type="number" placeholder="나이를 입력해주세요.">
+                        </div>
+                        <div class="userdetail01_box02">
+                            <span class="userdetail_title"><span class="point">*</span>닉네임</span>
+                            <input class="userdetail01_textbox" type="text" placeholder="닉네임을 입력해주세요.">
+                        </div>
+                    </div>
+                </div>
+                <div class="userdetail02">
+                    <div class="userdetail02_container">
+                        <span class="userdetail_title"><span class="point">*</span>도/시</span>
+                        <select class="userdetail02_select" id="do">
+                            <option id="seoul" value="서울시">서울특별시</option>
+                            <option id="jeju" value="제주도">제주특별자치도</option>
+                            <option id="gunggido" value="경기도">경기도</option>
+                            <option id="gungnam" value="경상남도">경상남도</option>
+                            <option id="gungbok" value="경상북도">경상북도</option>
+                            <option id="gangwon" value="강원도">강원도</option>
+                            <option id="junla" value="전라남도">전라남도</option>
+                            <option id="chungnam" value="충청남도">충청남도</option>
+                            <option id="chungbok" value="충청북도">충청북도</option>
+                            <option id="default" value="0" selected>도/시 를 선택해주세요.</option>
+                        </select>
+                    </div>
+                    <div class="userdetail02_container">
+                        <span class="userdetail_title"><span class="point">*</span>구/시</span>
+                        <select class="userdetail02_select" id="city">
+                            <option id="city_default" value="0" selected>구/시를 선택해주세요.</option>
+                            <!-- 이부분은 js 에서담당 -->
+                        </select>
+                    </div>
+                    <div class="userdetail02_container">
+                        <span class="userdetail_title" style="margin-left: 18px;">구/동</span>
+                        <input class="userdetail02_textbox" type="text" placeholder="상세 주소를 입력해주세요.">     
+                    </div>        
+                </div>
+                <div class="userdetail03">
+                    <div>
+                        <span class="userdetail_title"><span class="point">*</span>성별</span>
+                        <input name="gender" id="usermale" value="남자" type="radio">
+                        <label for="usermale" class="usergender_radio">남자</label>
+                        <input name="gender" id="userfemale" value="여자" type="radio">
+                        <label for="userfemale" class="usergender_radio">여자</label>
+                    </div>
+                    <div>
+                        <span class="userdetail_title"><span class="point">*</span>핸드폰번호(-제외)</span>
+                        <input class="userdetail03_textbox" type="number" placeholder="핸드폰 번호를 입력해주세요.">  
+                    </div>                                      
+                </div>
+                <div class="userdetail05">
+                    <span class="userdetail_title" style="margin-bottom: -10px;">1회 산책 시간</span><br>
+                    <div class="useronectime_box">
+                        <input type="radio" name="oncetime" id="oncetime01" value="30분미만">
+                        <label for="oncetime01" class="useroncetime_radio">30분 미만</label>
+                        <input type="radio" name="oncetime" id="oncetime02" value="30분~1시간">
+                        <label for="oncetime02" class="useroncetime_radio">30분~1시간</label>
+                        <input type="radio" name="oncetime" id="oncetime03" value="1시간~1시간30분">
+                        <label for="oncetime03" class="useroncetime_radio">1시간~1시간30분</label>
+                        <input type="radio" name="oncetime" id="oncetime04" value="1시간30분~2시간">
+                        <label for="oncetime04" class="useroncetime_radio">1시간30분~2시간</label>
+                        <input type="radio" name="oncetime" id="oncetime05" value="2시간~2시간30분">
+                        <label for="oncetime05" class="useroncetime_radio">2시간~2시간30분</label>
+                        <input type="radio" name="oncetime" id="oncetime06" value="2시간30분~3시간">
+                        <label for="oncetime06" class="useroncetime_radio">2시간30분~3시간</label>
+                        <input type="radio" name="oncetime" id="oncetime07" value="3시간+">
+                        <label for="oncetime07" class="useroncetime_radio">3시간+</label>
+                    </div>                                                                                                                                                              
+                </div>
+                <div class="userdetail07">
+                    <span class="userdetail_title">MBTI</span>
+                    <div class="userdetail07_container">
+                        <input type="radio" name="mbti" id="mbti01" value="INTJ">
+                        <label for="mbti01" class="useroncetime_radio">INTJ</label>
+                        <input type="radio" name="mbti" id="mbti02" value="INTP">
+                        <label for="mbti02" class="useroncetime_radio">INTP</label>
+                        <input type="radio" name="mbti" id="mbti03" value="ENTJ">
+                        <label for="mbti03" class="useroncetime_radio">ENTJ</label>
+                        <input type="radio" name="mbti" id="mbti04" value="ENTP">
+                        <label for="mbti04" class="useroncetime_radio">ENTP</label>
+                        <input type="radio" name="mbti" id="mbti05" value="INFJ">
+                        <label for="mbti05" class="useroncetime_radio">INFJ</label>
+                        <input type="radio" name="mbti" id="mbti06" value="INFP">
+                        <label for="mbti06" class="useroncetime_radio">INFP</label>
+                        <input type="radio" name="mbti" id="mbti07" value="ENFJ">
+                        <label for="mbti07" class="useroncetime_radio">ENFJ</label>
+                        <input type="radio" name="mbti" id="mbti08" value="ENFP">
+                        <label for="mbti08" class="useroncetime_radio">ENFP</label>
+                        <input type="radio" name="mbti" id="mbti09" value="ISTJ">
+                        <label for="mbti09" class="useroncetime_radio">ISTJ</label>
+                        <input type="radio" name="mbti" id="mbti10" value="ISTP">
+                        <label for="mbti10" class="useroncetime_radio">ISTP</label>
+                        <input type="radio" name="mbti" id="mbti11" value="ESTJ">
+                        <label for="mbti11" class="useroncetime_radio">ESTJ</label>
+                        <input type="radio" name="mbti" id="mbti12" value="ESTP">
+                        <label for="mbti12" class="useroncetime_radio">ESTP</label>  
+                        <input type="radio" name="mbti" id="mbti13" value="ISFJ">
+                        <label for="mbti13" class="useroncetime_radio">ISFJ</label>  
+                        <input type="radio" name="mbti" id="mbti14" value="ISFP">
+                        <label for="mbti14" class="useroncetime_radio">ISFP</label>  
+                        <input type="radio" name="mbti" id="mbti15" value="ESFJ">
+                        <label for="mbti15" class="useroncetime_radio">ESFJ</label>  
+                        <input type="radio" name="mbti" id="mbti16" value="ESFP">
+                        <label for="mbti16" class="useroncetime_radio">ESFP</label>                                                                                                                                                                                                                                                                                                                                                                        
+                    </div>                                 
+                </div>
+                <div class="userdetail08">
+                    <span class="userdetail_title" style="width: 100%;">산책 스타일(1개 이상 선택/복수선택 가능)</span>
+                    <div class="userwalkstyle_box">
+                        <input type="checkbox" name="walkstyle" id="walkstyle01" value="재잘재잘">
+                        <label for="walkstyle01" class="userwalkstyle_checkbox">재잘재잘</label>
+                        <input type="checkbox" name="walkstyle" id="walkstyle02" value="산책만 해요">
+                        <label for="walkstyle02" class="userwalkstyle_checkbox">산책만 해요</label>
+                        <input type="checkbox" name="walkstyle" id="walkstyle03" value="러너">
+                        <label for="walkstyle03" class="userwalkstyle_checkbox">러너</label>
+                        <input type="checkbox" name="walkstyle" id="walkstyle04" value="맛집탐방">
+                        <label for="walkstyle04" class="userwalkstyle_checkbox">맛집탐방</label>
+                        <input type="checkbox" name="walkstyle" id="walkstyle05" value="애견운동장">
+                        <label for="walkstyle05" class="userwalkstyle_checkbox">애견운동장</label>
+                        <input type="checkbox" name="walkstyle" id="walkstyle06" value="취미 공유">
+                        <label for="walkstyle06" class="userwalkstyle_checkbox">취미 공유</label>
+                    </div>                                                                                                                                          
+                </div>
+                <div class="userdetail09">
+                    <span class="userdetail_title" style="width: 100%;">산책 시간대(1개 이상 선택/복수선택 가능)</span>
+                    <div class="userwalktime_box">
+                        <input type="checkbox" name="walktime" id="walktime01" value="새벽">
+                        <label for="walktime01" class="userwalktime_checkbox">새벽</label>
+                        <input type="checkbox" name="walktime" id="walktime02" value="아침">
+                        <label for="walktime02" class="userwalktime_checkbox">아침</label>
+                        <input type="checkbox" name="walktime" id="walktime03" value="점심">
+                        <label for="walktime03" class="userwalktime_checkbox">점심</label>
+                        <input type="checkbox" name="walktime" id="walktime04" value="저녘">  
+                        <label for="walktime04" class="userwalktime_checkbox">저녘</label>
+                        <input type="checkbox" name="walktime" id="walktime05" value="밤">  
+                        <label for="walktime05" class="userwalktime_checkbox">밤</label>                        
+                    </div>              
+                </div>
+                <div class="userdetail11">
+                    <span class="userdetail_title" style="width: 100%;">자유로운 소개</span>
+                    <textarea class="userdetail11_textarea" placeholder="회원님의 소개를 입력해주세요."></textarea>
+                </div>
+                <div class="userdetail10">
+                    <span class="userdetail_title" style="width: 100%;">좋아하는 플레이스 사진을 등록해주세요.(클릭)</span><br>
+                    <div class="user_edit_detail10_picbox">
+                        <label for="user_place_upload01" class="user_place_style" id="label01">
+                            <input type="file" class="user_input_file_style" id="user_place_upload01" accept="image/*">
+                            <img class="user_place_noimg_style" id="noImage01" src="../image/noimage.png" alt="No Image">
+                            <button class="delete-button" id="deleteButton01">X</button>
+                        </label>
+                        
+                        <label for="user_place_upload02" class="user_place_style" id="label02">
+                            <input type="file" class="user_input_file_style" id="user_place_upload02" accept="image/*">
+                            <img class="user_place_noimg_style" id="noImage02" src="../image/noimage.png" alt="No Image">
+                            <button class="delete-button" id="deleteButton02">X</button>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="form_btn" type="button">취소</button>
+                <button class="form_btn" type="submit">수정완료</button>
+            </div>
+        </form>
+        <form class="petform" id="petform_id">
+            <div class="petform_box">
+                <div class="petdetail01">
+                    <div style="position: relative;">
+                        <label for="petpic_upload_1" class="petpic_label" id="petpic_label_id_1">
+                            <input type="file" class="petpic_file" id="petpic_upload_1">
+                            <img class="petimg" id="petimg_id_1" src="../image/noimage.png">
+                        </label>
+                        <button class="petpic_dbtn" id="petpic_dbtn_id_1">X</button>
+                    </div>
+                    <div class="petdetail_box01">
+                        <div class="petname_box">
+                            <span class="petdetail_title"><span class="point">*</span>이름</span>
+                            <input type="text" class="petname_input" id="petname_1" placeholder="이름을 입력해주세요.">
+                        </div>
+                        <div class="pettype_box">
+                            <span class="petdetail_title" style="margin-right: 17px;"><span class="point">*</span>종</span>
+                            <input type="text" class="pettype_title" id="pettype_1" placeholder="ex.푸들">
+                        </div>
+                        <div class="petgender_box">                       
+                            <span class="petdetail_title"><span class="point">*</span>성별</span>
+                            <input type="radio" id="petmale_1" name="petgender_1" value="남자">
+                            <label for="petmale_1" class="petgender_radio">남자</label>
+                            <input type="radio" id="petfemale_1" name="petgender_1" value="여자"> 
+                            <label for="petfemale_1" class="petgender_radio">여자</label>                       
+                        </div>
+                    </div>
+                </div>
+                <div class="petdetail02">
+                    <div class="petage_year_box">
+                        <span class="petdetail_title" style="margin-right: 30px;"><span class="point">*</span>나이(연)</span>
+                        <select id="petyear_1" class="petyear_input">
+                            <option id="year1" value="1">1살</option>
+                            <option id="year2" value="2">2살</option>
+                            <option id="year3" value="3">3살</option>
+                            <option id="year4" value="4">4살</option>
+                            <option id="year5" value="5">5살</option>
+                            <option id="year6" value="6">6살</option>
+                            <option id="year7" value="7">7살</option>
+                            <option id="year8" value="8">8살</option>
+                            <option id="year9" value="9">9살</option>
+                            <option id="year10" value="10">10살</option>
+                            <option id="year11" value="11">11살+</option>
+                            <option id="year11" value="0" selected>나이를 선택해주세요.</option>
+                        </select>
+                    </div>
+                    <div class="petage_month_box">
+                        <span class="petdetail_title" style="margin-right: 12px;"><span class="point">*</span>나이(개월)</span>
+                        <select id="petmonth_1" class="petyear_input">
+                            <option id="month1" value="1">1개월</option>
+                            <option id="month2" value="2">2개월</option>
+                            <option id="month3" value="3">3개월</option>
+                            <option id="month4" value="4">4개월</option>
+                            <option id="month5" value="5">5개월</option>
+                            <option id="month6" value="6">6개월</option>
+                            <option id="month7" value="7">7개월</option>
+                            <option id="month8" value="8">8개월</option>
+                            <option id="month9" value="9">9개월</option>
+                            <option id="month10" value="10">10개월</option>
+                            <option id="month11" value="11">11개월</option>
+                            <option id="month11" value="0" selected>개월을 선택해주세요.</option>
+                        </select>
+                    </div>   
+                    <div style="width: 100%;">
+                        <div class="pet_neutering_box">
+                            <span class="petdetail_title"><span class="point">*</span>중성화 여부</span>
+                            <input type="radio" id="neutering01_1" name="neutering_1" value="예">
+                            <label for="neutering01_1">예</label>
+                            <input type="radio" id="neutering02_1" name="neutering_1" value="아니오">
+                            <label for="neutering02_1">아니오</label>                        
+                        </div>
+                    </div>                 
+                </div>
+                <div class="petdetail04">
+                    <div class="petregister_box">
+                        <span class="petdetail_title" style="margin-right: 20px;"><span class="point">*</span>등록여부</span>
+                        <input type="radio" id="petregister_yes_1" name="petregister_1" value="예">
+                        <label for="petregister_yes_1" class="petregister_radio">예</label>
+                        <input type="radio" id="petregister_no_1" name="petregister_1" value="아니오">
+                        <label for="petregister_no_1" class="petregister_radio">아니오</label>                    
+                    </div>
+                    <div class="petnumber_box">
+                        <span class="petdetail_title" style="margin-left: 10px; margin-right: 25px;"><span class="point">*</span>등록번호</span>
+                        <input type="number" id="petnumber1" class="petnumber_input" placeholder="12자리 숫자를 입력해주세요" disabled>
+                    </div>
+                </div>
+                <div class="petdetail06">
+                    <span class="petdetail_title"><span class="point">*</span>몸무게</span>
+                    <div class="petweight_box">
+                        <input type="radio" id="petweight01_1" name="petweight_1" value="1~3kg">
+                        <label for="petweight01_1" class="petweight_radio">1~3kg</label>
+                        <input type="radio" id="petweight02_1" name="petweight_1" value="4~6kg">  
+                        <label for="petweight02_1" class="petweight_radio">4~6kg</label>
+                        <input type="radio" id="petweight03_1" name="petweight_1" value="7~10kg">  
+                        <label for="petweight03_1" class="petweight_radio">7~10kg</label>
+                        <input type="radio" id="petweight04_1" name="petweight_1" value="11~15kg">  
+                        <label for="petweight04_1" class="petweight_radio">11~15kg</label>
+                        <input type="radio" id="petweight05_1" name="petweight_1" value="15~20kg">  
+                        <label for="petweight05_1" class="petweight_radio">15~20kg</label>
+                        <input type="radio" id="petweight06_1" name="petweight_1" value="21kg+">                                                                                                                                                  
+                        <label for="petweight06_1" class="petweight_radio">21kg+</label>
+                    </div>
+                </div>
+                <div class="petdetail03">
+                    <span class="petdetail_title">성격(1개이상 선택/복수선택 가능)</span>
+                    <div class="petpersonal_box">
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal01_1" value="활발함">
+                        <label for="petpersonal01_1" class="petpersonal_checkbox">활발함</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal02_1" value="소심함">
+                        <label for="petpersonal02_1" class="petpersonal_checkbox">소심함</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal03_1" value="독립적">
+                        <label for="petpersonal03_1" class="petpersonal_checkbox">독립적</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal04_1" value="사교적">
+                        <label for="petpersonal04_1" class="petpersonal_checkbox">사교적</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal05_1" value="영리함">
+                        <label for="petpersonal05_1" class="petpersonal_checkbox">영리함</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal06_1" value="호기심 많음">
+                        <label for="petpersonal06_1" class="petpersonal_checkbox">호기심 많음</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal07_1" value="장난기 많음">
+                        <label for="petpersonal07_1" class="petpersonal_checkbox">장난기 많음</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal08_1" value="애정표현 많음">
+                        <label for="petpersonal08_1" class="petpersonal_checkbox">애정표현 많음</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal09_1" value="수줍음">
+                        <label for="petpersonal09_1" class="petpersonal_checkbox">수줍음</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal10_1" value="겁쟁이">
+                        <label for="petpersonal10_1" class="petpersonal_checkbox">겁쟁이</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal11_1" value="예민함">
+                        <label for="petpersonal11_1" class="petpersonal_checkbox">예민함</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal12_1" value="용감함">                                                                                                                                                                                                                                                                        
+                        <label for="petpersonal12_1" class="petpersonal_checkbox">용감함</label>
+
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal13_1" value="침착함">                                                                                                                                                                                                                                                                        
+                        <label for="petpersonal13_1" class="petpersonal_checkbox">침착함</label>
+                        
+                        <input type="checkbox" name="petpersonal_1" id="petpersonal14_1" value="무뚝뚝">                                                                                                                                                                                                                                                                        
+                        <label for="petpersonal14_1" class="petpersonal_checkbox">무뚝뚝</label>                        
+                    </div>
+                </div>
+                <div class="petdetail07">
+                    <span class="petdetail_title">산책 스타일(1개이상선택/복수선택가능)</span>
+                    <div>
+                        <input type="checkbox" id="petwalkstyle01_1" name="petwalkstyle_1" value="주변 냄새만 맡아요">
+                        <label for="petwalkstyle01_1">주변 냄새만 맡아요</label>
+                        <input type="checkbox" id="petwalkstyle02_1" name="petwalkstyle_1" value="나보다 큰 강아지 좋아요">
+                        <label for="petwalkstyle02_1">나보다 큰 강아지 좋아요</label>
+                        <input type="checkbox" id="petwalkstyle03_1" name="petwalkstyle_1" value="나보다 작은 강아지 좋아요">
+                        <label for="petwalkstyle03_1">나보다 작은 강아지 좋아요</label>
+                        <input type="checkbox" id="petwalkstyle04_1" name="petwalkstyle_1" value="뛰는게 좋아요">
+                        <label for="petwalkstyle04_1">뛰는게 좋아요</label>
+                        <input type="checkbox" id="petwalkstyle05_1" name="petwalkstyle_1" value="강아지는 관심 없어요">
+                        <label for="petwalkstyle05_1">강아지는 관심 없어요</label>
+                        <input type="checkbox" id="petwalkstyle06_1" name="petwalkstyle_1" value="같이 노는게 좋아요">
+                        <label for="petwalkstyle06_1">같이 노는게 좋아요</label>         
+                        <input type="checkbox" id="petwalkstyle07_1" name="petwalkstyle_1" value="사회화 훈련을 하고싶어요">
+                        <label for="petwalkstyle07_1">사회화 훈련을 하고싶어요</label>                                                                                                                                          
+                    </div>
+                </div>
+                <div class="petdetail08">
+                    <span class="petdetail_title">자유로운 소개</span>
+                    <textarea class="petdetail08_textarea" id="petintroduction_1" placeholder="반려동물의 소개를 적어주세요."></textarea>
+                </div>                                
+            </div>
+            <div class="buttons">
+                <button class="form_btn" type="button">취소</button>
+                <button class="form_btn" type="button">반려동물 추가</button>
+                <button class="form_btn" type="submit">수정완료</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        
+    </footer>
+    <script src="./Profile_Edit.js"></script>
+</body>
+</html>

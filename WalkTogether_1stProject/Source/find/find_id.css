@@ -1,0 +1,205 @@
+header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    align-items: center;
+    height: 120px;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+header .menu {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+    gap: 80px;
+    margin-top: 80px;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+header .menu li a:hover {
+    color: #ffbc4c;
+}
+
+
+header .login_status,
+header .logout_status {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: center;
+}
+
+
+header .login_status .profile_image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+header .login_status img {
+    width: 40px;
+    height: 40px;
+}
+
+
+/*서브헤더*/
+.sub_header{
+    height: 100px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ffbc4c;
+    display: flex;
+    width: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    flex-direction: column; /*내부요소 쌓이게됨*/
+}
+
+
+.sub_header span{
+    font-size: 1rem;
+    font-weight: normal;
+    display: block;
+    margin-top: -20px;
+}
+
+/*아이디 비번찾기 버튼*/
+a{
+    color: #000;
+    text-decoration: none;
+}
+.parent{
+    display: flex;
+    margin-bottom: 10px;
+    border-bottom: solid 2px black;
+}
+#findid{
+    float: right;
+    width: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ffbc4c;
+    cursor: pointer;
+    padding: 5px;
+    box-sizing: border-box;
+    
+}
+#findpw{
+    float: left;
+    width: 50%;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ffff;
+    cursor: pointer;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+
+/*컨테이너*/
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 250px;
+    padding: 20px;
+    border: none;
+    text-align: center;
+    border-bottom: 0.5px solid #7C838A;
+    
+}
+
+/*from*/
+#login-form {
+    display: inline-block;
+    text-align: center;
+}
+
+/*h2 글자*/
+h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+
+#id_check_button{
+    float: right;
+    margin-right: 90px;
+    margin-top: -25px;
+    padding: 2px;
+    background-color: #ffbc4c;
+    border: 2px solid #ffbc4c;
+    font-size: 10px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 4px;
+    cursor:pointer;
+}
+
+/*text 상자 주황색*/
+#login_form input[type="text"],
+#login_form input[type="tel"]{
+    border: 1px solid #ffbc4c;
+    border-radius: 4px;
+    width:90%;
+    margin: 0 auto 6px auto; /* 아래쪽만 살짝 띄움 */
+    padding: 4px 6px;        /* 위아래 패딩 줄임 */
+    box-sizing: border-box;
+    font-size: 0.7rem;
+     }
+
+/*라벨 왼쪽*/
+#login_form label{
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+    margin-bottom: 1px;
+    margin-left: 10px;
+}
+
+/*place holder크기*/
+input[placeholder]{
+     font-size: 0.8em;
+}
+
+/*회원가입 버튼*/
+.submit_button input[type="submit"] {
+    width: 95%;
+    padding: 2px;
+    background-color: #ffbc4c;
+    border: 2px solid #ffbc4c;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 4px;
+    margin-top: 3px;
+    cursor:pointer;
+}
+
+@media screen and (max-width:1140px){
+.container{
+    height: 70px;
+}
+}

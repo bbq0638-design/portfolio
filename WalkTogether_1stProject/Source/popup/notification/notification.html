@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알림 팝업</title>
+    <link rel="stylesheet" href="notification.css">
+</head>
+<body>
+    <div id="header">
+        알림
+    </div>
+    <div class="notification">
+        <img class="profile_image" src="../../image/noimage.png" alt="대체이미지">
+        <div class="notice">
+            <a href="#" onclick="popup()">홍길동님이 메이트 신청하였습니다.</a>
+        </div>
+        <!-- notice 클릭 시 unread 객체 자바스크립트로 뿅! 없어짐 -->
+        <span class="unread"> </span>
+    </div>
+<script src="notification.js"></script>
+</body>
+</html>

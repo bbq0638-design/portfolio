@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>찾아주세요 글 작성</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../header/header.css">
+        <link rel="stylesheet" href="lost_form.css">
+        <script>
+            function popup_message() {
+                window.open('../../popup/message/message.html', '메세지채팅창', 'width=480px, height=700px, location=no');
+            }
+            function popup_notice() {
+                window.open('../../popup/notification/notification.html', '알림창', 'width=480px, height=700px, location=no');
+            }
+            function profile_load() {
+                window.open('lost_load_profile.html', '프로필 불러오기', 'width=480px, height=700px, location=no');
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+            <ul class="logout_status">
+                <li class="login"><a href="../login/login_user.html">로그인</a></li>
+                <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+            </ul>
+            <ul class="login_status">
+                <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+                <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+                <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+                <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+            </ul>
+        </header>
+        <main>
+            <div class="sub_header">
+                <img src="../image/lost_image.png" alt="찾아주세요">
+            </div>
+            <div class="lost_form_main">
+                <h2>이미지 첨부</h2>
+                <div class="image_upload">
+                    <div id="main_image">
+                        <img class="main_image" src="../image/kong.png" alt="콩이">
+                    </div>
+                    <div class="sub_image">
+                        <img src="../image/noimage.png" alt="대체이미지">
+                        <img src="../image/noimage.png" alt="대체이미지">
+                        <img src="../image/noimage.png" alt="대체이미지"><br>
+                        <img src="../image/noimage.png" alt="대체이미지">
+                        <img src="../image/noimage.png" alt="대체이미지">
+                        <img src="../image/noimage.png" alt="대체이미지"><br>
+                        <div class="submit_button">
+                            <input type="submit" value="이미지 첨부">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lost_dog_information">
+                <h2>실종 강아지 정보</h2>
+                <div class="lost_form_input">
+                    <span class="user_edit_detail01_text01">
+                        <span class="point">*</span>이름
+                    </span>
+                    <input class="user_textbox01" type="text" placeholder="이름을 입력해주세요.">
+
+                    <span class="user_edit_detail01_text01">
+                        <span class="point">*</span>나이
+                    </span>
+                    <input class="user_textbox01" type="text" placeholder="나이를 입력해주세요.">
+                    <span class="user_edit_detail01_text01">
+                        <span class="point">*</span>종
+                    </span>
+                    <input class="user_textbox01" type="text" placeholder="ex.푸들">
+
+                    <span class="user_edit_detail01_text01">
+                        <span class="point">*</span>실종지역
+                    </span>
+                    <input class="user_textbox01" type="text" placeholder="지역을 입력하세요">
+
+                    <span class="user_edit_detail03_text01">
+                        <span class="point">*</span>성별
+                    </span>
+                    <div>
+                        <input name="gender" id="male" value="남자" type="radio">
+                            <label for="male" class="user_radiobox01">남자</label>
+                        <input name="gender" id="female" value="여자" type="radio">
+                            <label for="female" class="user_radiobox01">여자</label>
+                    </div>
+
+                    <span class="user_edit_detail03_text01">중성화여부</span>
+                    <div>
+                        <input name="nodick" id="yes" value="예" type="radio">
+                            <label for="yes" class="user_radiobox01">예</label>
+                        <input name="nodick" id="no" value="아니오" type="radio">
+                            <label for="no" class="user_radiobox01">아니오</label>
+                    </div>
+
+                    <span class="user_edit_detail03_text01">등록여부</span>
+                    <div>
+                        <input name="accounted" id="reg-yes" value="예" type="radio">
+                            <label for="reg-yes" class="user_radiobox01">예</label>
+                        <input name="accounted" id="reg-no" value="아니오" type="radio">
+                            <label for="reg-no" class="user_radiobox01">아니오</label>
+                    </div>
+
+                    <span class="user_edit_detail01_text01">
+                        등록번호
+                    </span>
+                    <input class="user_textbox01" type="text" placeholder="등록번호를 입력해주세요">
+                </div>
+            </div>
+
+            <div class="submit_button">
+                <input type="submit" value="프로필 불러오기" onclick="profile_load()">
+            </div>
+                <div class="description">
+                    <h2>상세설명</h2>
+                    <textarea name="lost_description" id="lost_description" placeholder="실종 당시 상황을 자세하게 설명해주세요.">
+                    </textarea>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="button1">
+                    <input type="submit" value="게시글 쓰기">
+                </div>
+            <div class="button2">
+                <input type="reset" value="초기화">
+            </div>
+        </div>
+        </main>
+        <script src="../header/header.js"></script>
+    </body>
+</html>

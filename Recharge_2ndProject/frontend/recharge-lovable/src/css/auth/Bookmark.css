@@ -1,0 +1,207 @@
+.Bookmark_main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;   
+}
+.Bookmark_title {
+    width: 90%;
+}
+
+.Bookmark_box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+.Bookmark_list_container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 25px;
+}
+
+.Bookmark_list_card{
+    border-radius: 6px;
+    position: relative;
+    aspect-ratio: 1 / 1.41;
+    width: 200px; 
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    overflow: hidden; /* 모서리 밖으로 나가는 내용 숨김 */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.Bookmark_list_card:hover{
+   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
+   transform: translateY(-3px);
+}
+.Bookmark_title {
+    font-size: 16px;
+    color: #494949;
+}
+.Bookmark_title h2{
+    margin: 40px 10px 5px 10px;
+}
+
+.Bookmark_category {
+    margin-top: 20px;
+}
+.Bookmark_category_btn1 {
+    border: 1.5px solid #004E89;
+    border-radius: 18px;
+    background: #004E89;
+    color:white;
+    height: 40px;
+    width: 120px;
+    margin: 0 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.Bookmark_category_btn2 {
+    border: 1.5px solid #004E89;
+    border-radius: 18px;
+    color:#004E89;
+    background-color: white;
+    height: 40px;
+    width: 120px;
+    margin: 0 5px;
+    font-weight: 600;                                                    
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}             
+.Bookmark_category_btn2:hover {
+    border: 1.5px solid #004E89;
+    border-radius: 18px;
+    color:#004E89;
+    background-color: #e7f1fa;
+    height: 40px;
+    width: 120px;
+    margin: 0 5px;
+    font-weight: 600;                                                    
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.Bookmark_list_card{
+    margin-top: 25px;
+}
+.Bookmark_img {
+    aspect-ratio: 1 / 1.41;
+    width: 100%; 
+    background: rgb(218, 216, 216);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 24px;
+    font-weight: bold;
+}
+.Bookmark_like_btn {
+    position: absolute;
+    background: rgba(0,0,0,0.45);
+    top: 8px;
+    right: 8px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.Bookmark_like_btn:hover {
+    background: rgba(0,0,0,0.65);
+    transform: scale(1.07);
+}
+.Bookmark_like_btn:focus-visible {
+    outline: 2px solid #F4C10F;
+    outline-offset: 2px;
+}
+
+.star {
+  width: 13px;
+  height: 13px;
+  color: #F4C10F;
+  fill: #F4C10F;
+}
+
+.Bookmark_movie_title{
+    position: absolute;
+    bottom: 0;
+    background-color: hwb(0 100% 0% / 0.8);
+    padding: 3px 0 0 10px;
+    width: 100%;
+    min-height: 25px;
+    font-size:14px;
+    font-weight: 500;
+    color: #383737;
+}
+
+.Bookmark_list_card_music {
+    position: relative;
+    width: 200px;
+    aspect-ratio: 1 / 1;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.2s ease;
+}
+.Bookmark_list_card_music:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.20);
+}
+
+/* ===== 음악 이미지 래퍼 ===== */
+.Bookmark_img_music {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+/* ===== 오버레이 (FindMusic과 동일한 효과) ===== */
+.Bookmark_img_music:hover .Bookmark_music_play_overlay {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* ===== 오버레이 기본 ===== */
+.Bookmark_music_play_overlay {
+    position: absolute;
+    inset: 0;             /* top/left/right/bottom = 0 */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.45);
+
+    color: #fff;
+    font-size: 3rem;
+
+    opacity: 0;
+    transform: scale(1);
+    transition: opacity 0.3s ease, transform 0.2s ease;
+
+    z-index: 5;   /* 혹시 모를 덮어쓰기 대비 */
+    pointer-events: auto;
+}
+
+/* ===== 재생 버튼 클릭 피드백 ===== */
+.Bookmark_music_play_overlay:active {
+    transform: scale(0.97);
+}
+/* hover 시 확실히 덮어쓰기 */
+.Bookmark_list_card_music:hover .Bookmark_music_play_overlay {
+    opacity: 1 !important;
+    transform: scale(1.05);
+}

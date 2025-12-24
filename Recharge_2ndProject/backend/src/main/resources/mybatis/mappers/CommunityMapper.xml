@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.recharge.backend.community.dao.CommunityDAO">
+
+    <!-- 전체 게시글 조회 -->
+    <select id="getCommunityList" resultType="com.recharge.backend.community.vo.CommunityVO">
+        SELECT *
+        FROM TB_COMMUNITY
+        ORDER BY COMMUNITY_POST_ID DESC
+    </select>
+
+    <!-- 단일 게시글 조회 -->
+    <select id="getCommunityPost" parameterType="long" resultType="com.recharge.backend.community.vo.CommunityVO">
+        SELECT *
+        FROM TB_COMMUNITY
+        WHERE COMMUNITY_POST_ID = #{communityPostId}
+    </select>
+
+    <!-- 게시글 등록 -->
+    <insert id="insertCommunityPost" parameterType="com.recharge.backend.community.vo.CommunityVO">
+        INSERT INTO TB_COMMUNITY (
+        COMMUNITY_POST_ID,
+        USER_ID,
+        COMMUNITY_IMAGE_PATH,
+        COMMUNITY_IMAGE_NAME,
+        COMMUNITY_TITLE,
+        COMMUNITY_CONTENT,
+        COMMUNITY_LIKE_COUNT,
+        COMMUNITY_VIEW_COUNT,
+        COMMUNITY_TAB,
+        CREATE_DATE,
+        CREATE_ID,
+        UPDATED_DATE,
+        UPDATED_ID
+        ) VALUES (
+        TB_COMMUNITY_SEQ.NEXTVAL,
+        #{userId},
+        #{communityImagePath, jdbcType=VARCHAR},
+        #{communityImageName, jdbcType=VARCHAR},
+        #{communityTitle, jdbcType=VARCHAR},
+        #{communityContent, jdbcType=VARCHAR},
+        0,
+        0,
+        #{communityTab},
+        SYSDATE,
+        #{createId},
+        SYSDATE,
+        #{updatedId}
+        )
+
+    </insert>
+
+    <update id="updateCommunityPost" parameterType="com.recharge.backend.community.vo.CommunityVO">
+        UPDATE TB_COMMUNITY
+        SET
+        COMMUNITY_TITLE = #{communityTitle, jdbcType=VARCHAR},
+        COMMUNITY_CONTENT = #{communityContent, jdbcType=VARCHAR},
+        COMMUNITY_TAB = #{communityTab, jdbcType=VARCHAR},
+        UPDATED_DATE = SYSDATE,
+        UPDATED_ID = #{updatedId, jdbcType=VARCHAR}
+        <!-- 이미지가 null이 아닐 때만 업데이트 -->
+        <if test="communityImagePath != null">
+            , COMMUNITY_IMAGE_PATH = #{communityImagePath, jdbcType=VARCHAR}
+        </if>
+        <if test="communityImageName != null">
+            , COMMUNITY_IMAGE_NAME = #{communityImageName, jdbcType=VARCHAR}
+        </if>
+        WHERE COMMUNITY_POST_ID = #{communityPostId}
+    </update>
+
+    <!-- 게시글 삭제 -->
+    <delete id="deleteCommunityPost" parameterType="long">
+        DELETE FROM TB_COMMUNITY
+        WHERE COMMUNITY_POST_ID = #{communityPostId}
+    </delete>
+
+
+    <!-- 게시글 좋아요 증가 -->
+    <update id="incrementLike" parameterType="long">
+        UPDATE TB_COMMUNITY
+        SET COMMUNITY_LIKE_COUNT = COMMUNITY_LIKE_COUNT + 1
+        WHERE COMMUNITY_POST_ID = #{communityPostId}
+    </update>
+
+    <!-- 조회수 증가 -->
+    <update id="increaseViewCount" parameterType="long">
+        UPDATE TB_COMMUNITY
+        SET COMMUNITY_VIEW_COUNT = COMMUNITY_VIEW_COUNT +1
+        WHERE COMMUNITY_POST_ID = #{communityPostId}
+    </update>
+
+</mapper>

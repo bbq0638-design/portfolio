@@ -1,0 +1,279 @@
+/* ===== 페이지 래퍼 ===== */
+.findcontents {
+    padding: 1rem 4rem;
+    text-align: center;
+    background-color: #f8f9f9;
+    padding-bottom: 6rem;
+}
+
+/* ===== 상단 영화/음악 전환 버튼 ===== */
+.findcontents_link {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.findcontents_btn {
+    border: none;
+    background-color: #f8f9f9;
+    cursor: pointer;
+}
+.findcontents_btn a {
+    text-decoration: none;
+    color: inherit;
+}
+.icon-wrap {
+    border: 2px solid #004e89;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.icon-wrap:hover {
+    background-color: #004e89;
+    color: #fff;
+}
+.findcontents_btn span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* ===== 메인 배너 ===== */
+.findmusic_main img,
+.findmusic_main .findmusic_main_img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* ===== AI 추천 섹션 ===== */
+.findcontents_recommendAi {
+    margin: 1rem 0;
+    padding: 2rem 1rem;
+    background: #e9f0fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.findcontents_recommendAi span {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.findcontents_recommendAi button {
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: #e9f0fb;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.findcontents_recommendAi button:hover {
+    background-color: #004e89;
+    color: #fff;
+    border-color: #004e89;
+}
+
+/* ===== 카테고리 헤더 ===== */
+.findmusic_category {
+    border-bottom: 2px solid #ccc;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.findmusic_category_title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: left;
+}
+.findmusic_category_addform a {
+    text-decoration: none;
+    font-weight: 500;
+    color: inherit;
+}
+
+/* ===== 슬라이더 공통 ===== */
+.findmusic_music {
+    position: relative;
+    margin: 2rem 0;
+}
+.findmusic_music:hover .findmusic_slider_btn {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== 가로 슬라이드 리스트 ===== */
+.findmusic_music_lists {
+    overflow-x: auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 180px;
+    gap: 1.5rem;
+    padding-bottom: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none; 
+    white-space: nowrap;      
+}
+.findmusic_music_lists::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+/* ===== 음악 카드 (정사각형 180×180) ===== */
+.findmusic_music_list {
+    position: relative;        /* 오버레이 기준점 */
+    width: 180px;
+    height: 180px;
+    border-radius: 6px;
+    overflow: hidden;          /* 카드 밖 컷 */
+    background: #004e89;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.18);
+    transition: transform 0.25s ease;
+}
+.findmusic_music_list:hover { transform: translateY(-5%); }
+
+.music_play_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    opacity: 0;
+    border-radius: 6px;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    z-index: 5;               
+    pointer-events: auto; 
+}
+
+/* hover 시 서서히 등장 */
+.findmusic_music_list:hover .music_play_overlay {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* 살짝 눌렀을 때 피드백 */
+.music_play_overlay:active {
+    transform: scale(0.95);
+}
+
+/* 실제 이미지 클래스(모두 커버) */
+.findmusic_img,
+.findmusic_weather_img,
+.findmusic_user_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== 즐겨찾기(별) 버튼: 오른쪽 위 오버레이 ===== */
+.findmusic_fav_btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* 토글 변형: outline / primary */
+.findmusic_fav_btn.outline {
+    background: rgba(0,0,0,0.45);
+    color: #F4C10F;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+.findmusic_fav_btn.outline:hover {
+    background: rgba(0,0,0,0.65);
+    transform: scale(1.07);
+}
+.findmusic_fav_btn.primary {
+    background: rgba(0,0,0,0.6);
+    color: #F4C10F; /* 채워진 별 컬러 */
+    border: 1px solid rgba(244,193,15,0.6);
+}
+.findmusic_fav_btn.primary:hover {
+    background: rgba(0,0,0,0.75);
+    transform: scale(1.07);
+}
+
+/* react-icons는 1em 기반 → 확실한 크기 보장 */
+.findmusic_fav_btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+
+/* 포커스 접근성 */
+.findmusic_fav_btn:focus-visible {
+    outline: 2px solid #F4C10F;
+    outline-offset: 2px;
+}
+
+/* ===== 유저 추천 카드 하단 정보 오버레이 ===== */
+.findmusic_music_info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 8px;
+    background: #004e89;
+    color: #fff;
+}
+.findmusic_music_info span:first-child {
+    font-weight: 700;
+    font-size: 1rem;
+    display: block;
+    text-align: left;
+}
+.findmusic_music_info span:last-child {
+    opacity: 0.9;
+    font-size: 0.85rem;
+    display: block;
+    text-align: left;
+}
+
+/* ===== 슬라이드 내비 버튼 ===== */
+.findmusic_slider_btn {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 50;
+    transition: opacity 0.3s ease;
+}
+.findmusic_slider_btn.left { left: 0.5rem; }
+.findmusic_slider_btn.right { right: 0.5rem; }
+
+.findmusic_slider_btn button {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 3.5rem;
+    height: 12rem;
+    transition: color 0.2s ease;
+}
+.findmusic_slider_btn button:hover { color: #004e89; }

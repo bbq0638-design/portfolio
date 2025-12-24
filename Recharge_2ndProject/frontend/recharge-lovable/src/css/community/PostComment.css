@@ -1,0 +1,144 @@
+/* ===== 댓글 섹션 ===== */
+.community_comment-container {
+  border-top: 3px solid #e0e0e0;
+  padding-top: 28px;
+  margin-top: 35px;
+}
+
+.community_comment-container h3 {
+  margin: 0 0 24px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #004E89;
+  letter-spacing: -0.01em;
+}
+
+.community_comment-list {
+  list-style: none;
+  margin: 0 0 24px 0;
+  padding: 0;
+}
+
+.no-comment {
+  padding: 40px 20px;
+  text-align: center;
+  color: #999999;
+  font-size: 15px;
+  background: #f9f9f9;
+  border-radius: 4px;
+  border: 2px dashed #e0e0e0;
+}
+
+.community_comment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 18px;
+  margin-bottom: 14px;
+  background: #f9f9f9;
+  border-radius: 4px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.community_comment-item:hover {
+  border-color: #004E89;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.community_comment-user {
+  font-weight: 700;
+  color: #004E89;
+  min-width: 90px;
+  font-size: 15px;
+}
+
+.community_comment-content {
+  flex: 1;
+  margin-left: 18px;
+  color: #1a1a1a;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.community_comment-date {
+  font-size: 13px;
+  color: #999999;
+  min-width: 110px;
+  text-align: right;
+}
+
+.community_comment-input {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.community_comment-inputbox {
+  flex: 1;
+  padding: 14px 18px;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  background: #ffffff;
+}
+
+.community_comment-inputbox:focus {
+  outline: none;
+  border-color: #004E89;
+  box-shadow: 0 0 0 4px rgba(0, 78, 137, 0.1);
+}
+
+.community_comment-btn {
+  background: #004E89;
+  color: #fff;
+  border: 2px solid #004E89;
+  border-radius: 4px;
+  padding: 14px 28px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+}
+
+.community_comment-btn:hover {
+  background: #003366;
+  border-color: #003366;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.community_comment-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.community_comment-delete-btn,
+.community_comment-report-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.community_comment-delete-btn:hover {
+  color: #cc0000;
+}
+
+.community_comment-report-btn:hover {
+  color: #003366;
+}
+
+.community_comment-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+

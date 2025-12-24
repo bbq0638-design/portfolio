@@ -1,0 +1,63 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    align-items: center;
+    height: 120px;
+    z-index: 1;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+header .menu {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+    gap: 80px;
+    margin-top: 80px;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+header .menu li a:hover {
+    color: #ffbc4c;
+}
+
+
+header .login_status,
+header .logout_status {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: center;
+}
+
+
+header .login_status .profile_image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+header .login_status img {
+    width: 40px;
+    height: 40px;
+}

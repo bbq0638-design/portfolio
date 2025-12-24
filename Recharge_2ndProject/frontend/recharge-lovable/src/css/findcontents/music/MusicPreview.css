@@ -1,0 +1,78 @@
+.musicpreview_bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: #0a0a0a;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+}
+
+.musicpreview_bar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.musicpreview_info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.musicpreview_title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.musicpreview_singer {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.musicpreview_progress {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+
+.musicpreview_progress_inner {
+    height: 100%;
+    background: #f4c10f;
+    transition: width 0.2s linear;
+}
+
+.musicpreview_controls {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.musicpreview_controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.musicpreview_controls button:hover {
+    transform: scale(1.2);
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}

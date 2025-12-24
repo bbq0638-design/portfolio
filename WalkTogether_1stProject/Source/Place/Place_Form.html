@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./Place_Form.css">
+    <link rel="stylesheet" href="header.css">
+    <title>플레이스 게시판</title>
+</head>
+<body>
+        <header>
+            <img class="logo" src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+            <ul class="logout_status">
+                <li class="login"><a href="../login/login_user.html">로그인</a></li>
+                <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+            </ul>
+            <ul class="login_status">
+                <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+                <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+                <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+                <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+            </ul>
+        </header>
+    <div class="sub_header">
+        <div class="sub_header_title">
+            <span class="sub_header_text01">플레이스 글쓰기</span>
+            <span class="sub_header_text02">나만의 플레이스를 작성해주세요.</span>
+        </div>
+    </div>
+    <div class="main">
+        <div class="edit_title">어떤 장소 인가요?</div>
+        <form action="">
+            <div class="edit_box">
+                <div class="edit_placetextbox">
+                    <p class="edit_placetext">업체명(장소명)</p>
+                    <input type="text" class="edit_textbox" placeholder="ex.@@공원" id="place_where">
+                </div>
+                <div class="edit_placetextbox">
+                    <p class="edit_placetext">장소 카테고리</p>
+                    <input type="text" class="edit_textbox" placeholder="ex.공원, 운동장, 호수, 바다" id="place_category">
+                </div>
+                <div class="edit_placetextbox">
+                    <p class="edit_placetext">주소</p>
+                    <input type="text" class="edit_textbox" placeholder="천안시 서북구 ##동..." id="place_address">
+                </div>
+                <div class="edit_placetextbox">
+                    <p class="edit_placetext">한줄평</p>
+                    <input type="text" class="edit_textbox" placeholder="ex.혼자서 산책하기 너무 좋아요" id="one_line_review">
+                </div>                    
+                <div class="edit_placetextbox">
+                    <p class="edit_placetext">후기</p>
+                    <textarea class="place_textarea" name="place_review" placeholder="후기를 입력해주세요." id="review"></textarea>
+                </div>
+                <div class="edit_placeimgbox">
+                    <p class="edit_placetext">사진 업로드</p>
+                    <label for="user_place_upload01" class="user_place_style" id="label01">
+                        <input type="file" class="user_input_file_style" id="user_place_upload01" accept="image/*">
+                        <img class="user_place_noimg_style" id="noImage01" src="../image/noimage.png" alt="No Image">
+                        <button class="delete-button" id="deleteButton01">X</button>
+                    </label>
+                </div>
+                <div class="edit_placetextbox">
+                    <p class="edit_placetext02">별점주기</p>
+                    <div class="star_rating">
+                        <input type="radio" name="star_score" class="star" value="1">
+                        <input type="radio" name="star_score" class="star" value="2">
+                        <input type="radio" name="star_score" class="star" value="3">
+                        <input type="radio" name="star_score" class="star" value="4">
+                        <input type="radio" name="star_score" class="star" value="5">
+                    </div>
+                </div>
+                <div class="edit_warningbox">
+                    ※ 별점을 부여하지 않으면 기본 3점으로 처리됩니다.<br>
+                    ※ 양심껏 점수를 부여하여 깨끗하고 즐거운 메이트 문화를 만드는데 동참해주세요.
+                </div>
+                <div class="Line"></div>
+                <div class="submit_box">
+                    <button id="submit_btn" class="submit_button">작성완료</button>
+                </div>                
+            </div>
+        </form>
+    </div>
+    <script src="header.js"></script>
+    <script src="Place_Form.js"></script>
+</body>
+</html>

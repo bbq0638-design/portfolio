@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="mate_finder.css">
+    <title>메이트 찾기</title>
+</head>
+<body>
+    <header>
+        <img src="../image/logo.png" id="logo"  alt="logo" onclick="location.href='../main/main_page.html'">
+        <ul class="menu">
+            <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+            <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+            <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+            <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+        </ul>
+        <ul class="logout_status">
+            <li class="login"><a href="../login/login_user.html">로그인</a></li>
+            <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+        </ul>
+        <ul class="login_status">
+            <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+            <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+            <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+            <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="sub_header">
+            <h1>메이트 찾기</h1>
+            <p>메이트의 정보를 선택하고, 원하는 메이트를 찾아보세요!</p>
+        </div>
+        <div class="userdetail02">
+                    <div class="userdetail02_container">
+                        <span class="userdetail_title"><span class="point">*</span>도/시</span>
+                        <select class="userdetail02_select" id="do">
+                            <option id="seoul" value="서울시">서울특별시</option>
+                            <option id="jeju" value="제주도">제주특별자치도</option>
+                            <option id="gunggido" value="경기도">경기도</option>
+                            <option id="gungnam" value="경상남도">경상남도</option>
+                            <option id="gungbok" value="경상북도">경상북도</option>
+                            <option id="gangwon" value="강원도">강원도</option>
+                            <option id="junla" value="전라남도">전라남도</option>
+                            <option id="chungnam" value="충청남도">충청남도</option>
+                            <option id="chungbok" value="충청북도">충청북도</option>
+                            <option id="default" value="0" selected>도/시 를 선택해주세요.</option>
+                        </select>
+                    </div>
+                    <div class="userdetail02_container">
+                        <span class="userdetail_title"><span class="point">*</span>구/시</span>
+                        <select class="userdetail02_select" id="city">
+                            <option id="city_default" value="0" selected>구/시를 선택해주세요.</option>
+                            <!-- 이부분은 js 에서담당 -->
+                        </select>
+                    </div>  
+                </div>
+        <div class="mate_finder">
+            <div class="human">
+                <h2>집사</h2>
+                <hr style="width:80%;">
+                <form action="" class="human_key">
+                    <div class="gender">
+                        <table>
+                        <tr><td colspan="2"><span class="choice">
+                            성별
+                        </span></td></tr>
+                        <tr style="width:100%;">
+                        <td><input type="radio" id="man" name="human_gender" value="남자">
+                            <label for="man">
+                                남자
+                            </label></td>
+                        <td><input type="radio" id="woman" name="human_gender" value="여자">
+                            <label for="woman">
+                                여자
+                        </label></td></tr></table>
+                    </div>
+                    <div class="walk_style">
+                        <table>
+                        <tr><td><span class="choice">
+                            산책 스타일
+                        </span></td></tr>
+                        <tr>
+                        <td><input type="checkbox" id="talkative" name="walking_style" value="재잘재잘">
+                            <label for="talkative">
+                                재잘재잘
+                            </label></td>
+                        <td><input type="checkbox" id="onlywalk" name="walking_style" value="산책만해요">
+                            <label for="onlywalk">
+                                산책만해요
+                            </label></td>
+                        <td><input type="checkbox" id="runner" name="walking_style" value="러너">
+                            <label for="runner">
+                                러너
+                            </label></td>
+                        <td><input type="checkbox" id="foodfinder" name="walking_style" value="맛집탐방">
+                            <label for="foodfinder">
+                                맛집탐방
+                            </label></td>
+                        <td><input type="checkbox" id="gym" name="walking_style" value="애견운동장">
+                            <label for="gym">
+                                애견운동장
+                            </label></td>
+                        <td><input type="checkbox" id="hobby" name="walking_style" value="취미 공유">
+                            <label for="hobby">
+                                취미 공유
+                            </label></td></tr>
+                        </table>    
+                    </div>
+                    <div class="mbti">
+                        <table>
+                        <tr><td><span class="choice">
+                            MBTI
+                        </span></td></tr>
+
+                        <tr><td><input type="radio" id="intj" name="mbti_select" value="intj">
+                            <label for="intj">
+                                INTJ
+                            </label></td>
+                        <td><input type="radio" id="intp" name="mbti_select" value="intp">
+                            <label for="intp">
+                                INTP
+                            </label></td>
+                        <td><input type="radio" id="entj" name="mbti_select" value="entj">
+                            <label for="entj">
+                                ENTJ
+                            </label></td>
+                        <td><input type="radio" id="entp" name="mbti_select" value="entp">
+                            <label for="entp">
+                                ENTP
+                            </label></td>
+                        <td><input type="radio" id="infj" name="mbti_select" value="infj">
+                            <label for="infj">
+                                INFJ
+                            </label></td>
+                        <td><input type="radio" id="infp" name="mbti_select" value="infp">
+                            <label for="infp">
+                                INFP
+                            </label></td>
+                        <td><input type="radio" id="enfj" name="mbti_select" value="enfj">
+                            <label for="enfj">
+                                ENFJ
+                            </label></td>
+                        <td><input type="radio" id="enfp" name="mbti_select" value="enfp">
+                            <label for="enfp">
+                                ENFP
+                            </label></td>
+                        <td><input type="radio" id="istj" name="mbti_select" value="istj">
+                            <label for="istj">
+                                ISTJ
+                            </label></td>
+                        <td><input type="radio" id="istp" name="mbti_select" value="istp">
+                            <label for="istp">
+                                ISTP
+                            </label></td>
+                        <td><input type="radio" id="estj" name="mbti_select" value="estj">
+                            <label for="estj">
+                                ESTJ
+                            </label></td>
+                        <td><input type="radio" id="estp" name="mbti_select" value="estp">
+                            <label for="estp">
+                                ESTP
+                            </label></td>
+                        <td><input type="radio" id="isfj" name="mbti_select" value="isfj">
+                            <label for="isfj">
+                                ISFJ
+                            </label></td>
+                        <td><input type="radio" id="isfp" name="mbti_select" value="isfp">
+                            <label for="isfp">
+                                ISFP
+                            </label></td>
+                        <td><input type="radio" id="esfj" name="mbti_select" value="esfj">
+                            <label for="esfj">
+                                ESFJ
+                            </label></td>
+                        <td><input type="radio" id="esfp" name="mbti_select" value="esfp">
+                            <label for="esfp">
+                                ESFP
+                            </label></td></tr>
+                        </table>
+                    </div>
+                    <div class="walk_time">
+                        <table>
+                        <tr><td><span class="choice">
+                            산책 시간대
+                        </span></td></tr>
+                        <tr><td><input type="radio" id="dawn" name="walk_time" value="새벽">
+                            <label for="morning">
+                                새벽
+                            </label></td>
+                        <td><input type="radio" id="morning" name="walk_time" value="아침">
+                            <label for="morning">
+                                아침
+                            </label></td>
+                        <td><input type="radio" id="lunch" name="walk_time" value="점심">
+                            <label for="lunch">
+                                점심
+                            </label></td>
+                        <td><input type="radio" id="evening" name="walk_time" value="저녁">
+                            <label for="evening">
+                                저녁
+                            </label></td>
+                        <td><input type="radio" id="night" name="walk_time" value="밤">
+                            <label for="night">
+                                밤
+                            </label></td></tr>
+                        </table>
+                    </div>
+                </form>
+            </div>
+            <div class="dog">
+                <h2>반려견</h2>
+                <hr style="width:80%;">
+                <form action="" class="dog_key">
+                    <div class="dog_gender">
+                        <table>
+                        <tr><td><span class="choice">
+                            성별
+                        </span></td></tr>
+                        <tr style="width:100%;">
+                        <td><input type="radio" id="dog_man" name="dog_m_gender" value="남자">
+                            <label for="dog_man">
+                                남자
+                            </label></td>
+                        <td><input type="radio" id="dog_woman" name="dog_w_gender" value="여자">
+                            <label for="dog_woman">
+                                여자
+                        </label></td></tr></table>
+                    </div>
+                    <div class="personality">
+                        <table>
+                        <tr><td><span class="choice">
+                            성격
+                        </span></td></tr>
+
+                        <tr><td><input type="checkbox" id="lively" name="personality" value="활발함">
+                            <label for="lively">
+                                활발함
+                            </label></td>
+                        <td><input type="checkbox" id="timid" name="personality" value="소심함">
+                            <label for="timid">
+                                소심함
+                            </label></td>
+                        <td><input type="checkbox" id="independent" name="personality" value="독립적">
+                            <label for="independent">
+                                독립적
+                            </label></td>
+                        <td><input type="checkbox" id="sociable" name="personality" value="사교적">
+                            <label for="sociable">
+                                사교적
+                            </label></td>
+                        <td><input type="checkbox" id="clever" name="personality" value="영리함">
+                            <label for="clever">
+                                영리함
+                            </label></td>
+                        <td><input type="checkbox" id="curious" name="personality" value="호기심 많음">
+                            <label for="curious">
+                                호기심 많음
+                            </label></td>
+                        <td><input type="checkbox" id="playful" name="personality" value="장난기 많음">
+                            <label for="playful">
+                                장난기 많음
+                            </label></td>
+                        <td><input type="checkbox" id="affectionate" name="personality" value="애정표현 많음">
+                            <label for="affectionate">
+                                애정표현 많음
+                            </label></td>
+                        <td><input type="checkbox" id="shy" name="personality" value="수줍음">
+                            <label for="shy">
+                                수줍음
+                            </label></td>
+                        <td><input type="checkbox" id="cowardly" name="personality" value="겁쟁이">
+                            <label for="cowardly">
+                                겁쟁이
+                            </label></td>
+                        <td><input type="checkbox" id="sensitive" name="personality" value="예민함">
+                            <label for="sensitive">
+                                예민함
+                            </label></td>
+                        <td><input type="checkbox" id="brave" name="personality" value="용감함">
+                            <label for="brave">
+                                용감함
+                            </label></td>
+                        <td><input type="checkbox" id="calm" name="personality" value="침착함">
+                            <label for="calm">
+                                침착함
+                            </label></td>
+                        <td><input type="checkbox" id="blunt" name="personality" value="무뚝뚝">
+                            <label for="blunt">
+                                무뚝뚝
+                            </label></td></tr>
+                            
+                    </div>
+                    <div class="dog_walk_style">
+                        <tr><td><span class="choice">
+                            산책 스타일
+                        </span></td></tr>
+
+                        <tr><td><input type="checkbox" id="snore" name="dog_walk_style" value="주변 냄새만 맡아요">
+                            <label for="snore">
+                                주변 냄새만 맡아요
+                            </label></td>
+                        <td><input type="checkbox" id="like_bigger" name="dog_walk_style" value="큰 강아지 좋아요">
+                            <label for="like_bigger">
+                                나보다 큰 강아지가 좋아요
+                            </label></td>
+                        <td><input type="checkbox" id="like_smaller" name="dog_walk_style" value="작은 강아지 좋아요">
+                            <label for="like_smaller">
+                                나보다 작은 강아지가 좋아요
+                            </label></td>
+                        <td><input type="checkbox" id="like_run" name="dog_walk_style" value="뛰는게 좋아요">
+                            <label for="like_run">
+                                뛰는게 좋아요
+                            </label></td>    
+                        <td><input type="checkbox" id="no_interest" name="dog_walk_style" value="강아지는 관심 없어요">
+                            <label for="no_interest">
+                                강아지는 관심 없어요
+                            </label></td>
+                        <td><input type="checkbox" id="play_together" name="dog_walk_style" value="같이 노는게 좋아요">
+                            <label for="play_together">
+                                같이 노는게 좋아요
+                            </label></td>
+                        <td><input type="checkbox" id="want_social" name="dog_walk_style" value="사회화 훈련을 하고싶어요">
+                            <label for="want_social">
+                                사회화 훈련을 하고싶어요
+                            </label></td></tr>
+                            </table>
+                    </div>
+                    <div class="dog_walk_time">
+                        <table>
+                        <tr><td><span class="choice">
+                            산책 시간
+                        </span></td></tr>
+                        <tr><td><input type="radio" id="30minute" name="walk_time" value="새벽">
+                            <label for="30minute">
+                                30분 미만
+                            </label></td>
+                        <td><input type="radio" id="1hour" name="walk_time" value="아침">
+                            <label for="1hour">
+                                30분 ~ 1시간
+                            </label></td>
+                        <td><input type="radio" id="1hour half" name="walk_time" value="점심">
+                            <label for="1hour half">
+                                1시간 ~ 1시간 30분
+                            </label></td>
+                        <td><input type="radio" id="2hour" name="walk_time" value="저녁">
+                            <label for="2hour">
+                                1시간 30분 ~ 2시간
+                            </label></td>
+                        <td><input type="radio" id="2hour half" name="walk_time" value="밤">
+                            <label for="2hour half">
+                                2시간 ~ 2시간 30분
+                            </label></td>
+                        <td><input type="radio" id="3hour" name="walk_time" value="밤">
+                            <label for="3hour">
+                                2시간 30분 ~ 3시간
+                            </label></td>
+                        <td><input type="radio" id="3hour+" name="walk_time" value="밤">
+                            <label for="3hour+">
+                                3시간+
+                            </label></td></tr>
+                        </table>
+                    </div>
+                </form> 
+            </div>
+    </div><hr style="width:1100px; color:black;">
+    <form>
+        <div class="submit_button">
+            <input type="submit" value="메이트 찾기">
+        </div>
+    </form>
+    </main>
+    <script src="../header/header.js"></script>
+    <script src="mate_finder.js"></script>
+</body>
+</html>

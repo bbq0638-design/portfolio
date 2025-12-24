@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./profile.css">
+    <title>프로필 피드</title>
+</head>
+<body>
+    <header>
+        <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+        <ul class="menu">
+            <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+            <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+            <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+            <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+        </ul>
+        <ul class="logout_status">
+            <li class="login"><a href="../login/login_user.html">로그인</a></li>
+            <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+        </ul>
+        <ul class="login_status">
+            <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+            <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+            <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+            <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+        </ul>
+    </header>
+    <div class="main">
+        <div class="profilebox">
+            <div class="profile_pic_name_box">
+                <div class="piccircle">
+                    <img class="profile_sumimg" id="display_user_profile_img" src="../image/noimage.png">
+                </div>
+                <span class="profile_name" id="display_user_nickname">닉네임</span>
+            </div>
+            <div class="profile_edit_button" id="edit_profile_btn_id" onclick="location.href='../Profile_Edit/Profile_Edit.html'">프로필 수정</div>
+            <div class="profile_placebox">
+                <span class="profile_placetitle">좋아하는 플레이스</span>
+                <div class="profile_placepicbox">
+                    <div class="profile_placepic">
+                        <img class="profile_place_img" id="display_place_img_1" src="../image/noimage.png">
+                    </div>
+                    <div class="profile_placepic">
+                        <img class="profile_place_img" id="display_place_img_2" src="../image/noimage.png">
+                    </div>
+                </div>
+            </div>
+            <div class="profile_smallinfobox">
+                <div class="profile_smallinfo_textbox">
+                    <span class="profile_smallinfo_text01">최근산책</span>
+                    <span class="profile_smallinfo_text02" id="display_last_walk_date">N/A</span>
+                </div>
+                <div class="profile_smallinfo_textbox">
+                    <span class="profile_smallinfo_text01">평균 산책 시간</span>
+                    <span class="profile_smallinfo_text02" id="display_avg_walk_time">N/A</span>
+                </div>
+                <div class="profile_smallinfo_textbox">
+                    <span class="profile_smallinfo_text01">총 메이트 횟수</span>
+                    <span class="profile_smallinfo_text02" id="display_total_mates">N/A</span>
+                </div>
+            </div>
+            <div class="profile_manner_scorebox">
+                <div class="profile_manner_textbox">
+                    <span class="profile_manner_text">매너점수</span>
+                    <span class="profile_manner_text" id="display_manner_score">50점</span>
+                </div>
+                <progress class="profile_progress_bar" id="display_manner_progress" value="50" max="100"></progress>
+            </div>
+            <div class="profile_btn02_box">
+                <button class="report_btn" id="report_btn_id">신고하기</button>
+                <button class="profile_review_btn" id="review_btn_id" onclick="location.href='../review/review.html'">후기 보러 가기</button>
+            </div>
+        </div>
+        <div class="profile_tabbox">
+            <button class="profile_peedbtn" id="tab_pic">사진</button>
+            <button class="profile_peedbtn" id="tab_info">정보</button>
+        </div>
+        <div class="profile_infobox">
+            <div id="profile_picpeedbox">
+                <div class="profile_picpeed_imgbox">
+                    <img class="profile_picpeedimg" src="../image/kuro.jpg">
+                    <img class="profile_picpeedimg" id="pic01" src="../image/kuro.jpg">
+                    <img class="profile_picpeedimg" id="pic02" src="../image/kuro.jpg">
+                    <img class="profile_picpeedimg" id="pic03" src="../image/kuro.jpg">
+                    <img class="profile_picpeedimg" id="pic04" src="../image/kuro.jpg">
+                    <img class="profile_picpeedimg" id="pic05" src="../image/kuro.jpg">
+                </div>
+                <button class="profile_addpicpeed_btn" onclick="location='./profile_addpic.html'">+</button>
+            </div>
+            <div id="profile_userpeedbox">
+                <div class="profile_userinfobox">
+                    <div class="profile_title_box">
+                        <span class="profile_userinfo_title_text">집사</span>
+                    </div>
+                    <div class="profile_detail_container">
+                        <img class="profile_info_img" id="display_user_info_img" src="../image/noimage.png">
+                        <div class="profile_info_detail01">
+                            <div class="profile_info_5001">
+                                <span class="profile_info_title">이름</span>
+                                <span class="profile_info_detail_text" id="display_user_name">N/A</span>
+                            </div>
+                            <div class="profile_info_5001">
+                                <span class="profile_info_title">나이</span>
+                                <span class="profile_info_detail_text" id="display_user_age">N/A</span>
+                            </div>
+                            <div class="profile_info_5001">
+                                <span class="profile_info_title">닉네임</span>
+                                <span class="profile_info_detail_text" id="display_user_info_nickname">N/A</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile_detail_container02">
+                        <!-- 성별과 산책 시간대를 맨 위로 올림 -->
+                        <div class="profile_info_5002">
+                            <span class="profile_info_title">성별</span>
+                            <span class="profile_info_detail_text" id="display_user_gender">N/A</span>
+                        </div>
+                        <div class="profile_info_5002">
+                            <span class="profile_info_title">산책 시간대</span>
+                            <span class="profile_info_detail_text" id="display_user_walktimes">N/A</span>
+                        </div>
+                        <div class="profile_info_5002">
+                            <span class="profile_info_title">지역</span>
+                            <span class="profile_info_detail_text" id="display_user_region">N/A</span>
+                        </div>
+                        <div class="profile_info_5002">
+                            <span class="profile_info_title">1회 산책 시간</span>
+                            <span class="profile_info_detail_text" id="display_user_onetime_walk">N/A</span>
+                        </div>
+                        <div class="profile_info_5002">
+                            <span class="profile_info_title">산책 스타일</span>
+                            <span class="profile_info_detail_text" id="display_user_walkstyle">N/A</span>
+                        </div>
+                        <div class="profile_info_5002">
+                            <span class="profile_info_title">MBTI</span>
+                            <span class="profile_info_detail_text" id="display_user_mbti">N/A</span>
+                        </div>
+                        <div class="profile_info_5002" style="width: 100%;">
+                            <span class="profile_info_title">소개</span>
+                            <span class="profile_info_detail_text" id="display_user_introduction">N/A</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 반려동물 정보는 이곳에 동적으로 로드됩니다 -->
+                <div class="pet_carousel_wrapper">
+                    <div id="pet_profiles_container">
+                        <!-- Pet profiles will be loaded here dynamically -->
+                    </div>
+                    <button class="carousel_nav_btn" id="next_pet_btn" style="display: none;">더보기</button>
+                </div>
+
+                <button class="mate_request_btn" id="mate_request_id">메이트 신청</button>
+            </div>
+        </div>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>

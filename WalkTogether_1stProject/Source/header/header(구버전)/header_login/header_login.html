@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>우리걷개</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="header_login.css">
+        <script>
+
+            function popup_message() {
+            window.open('../popup/message/message.html', '메세지채팅창', 'width=480px, height=700px, location=no');
+        }
+        </script>
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="./image/logo.png" herf="#" alt="logo">
+            <ul class="menu">
+                <li class="mate_search"><a href="#">메이트 찾기</a></li>
+                <li class="lost"><a href="#">찾아주세요</a></li>
+                <li class="place"><a href="#">플레이스</a></li>
+                <li class="notice"><a href="#">공지사항</a></li>
+            </ul>
+            <ul class="login_menu">
+                <li class="profile_image"><a href="#"><img src="./image/kuro.jpg"></a></li>
+                <li class="message_point"><a href="#" onclick="popup_message()"><img src="./image/message_img.png"></a></li>
+                <li class="notification_point"><a href="#"><img src="./image/notification_img.png"></a></li>
+                <li class="edit_point"><a href="#"><img src="./image/edit_img.png"></a></li>
+            </ul>
+        </header>
+    </body>
+</html>

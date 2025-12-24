@@ -1,0 +1,231 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    align-items: center;
+    height: 120px;
+    z-index: 1;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+header .menu {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+    gap: 80px;
+    margin-top: 80px;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+header .menu li a:hover {
+    color: #ffbc4c;
+}
+
+
+header .login_status,
+header .logout_status {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: center;
+}
+
+
+header .login_status .profile_image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+header .login_status img {
+    width: 40px;
+    height: 40px;
+}
+
+header .profile_image img {
+    border-radius: 50%;
+}
+.sub_header {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 120px;
+    background-color: #ffbc4c;
+}
+.sub_header_text01{
+    font-size: 45px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+} 
+.sub_header_text02{
+    font-size: 38px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+
+.main{
+    width: 1100px;
+    
+    margin-top: 50px;
+}
+.place_detail_titlebox{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.place_detail_title{
+    font-weight: bold;
+}
+.place_detail_date{
+    color: #7C838A;
+}
+.star_rating{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.star{
+    appearance: none;
+    padding: 1px;
+}
+.star::after{
+    content: '☆';
+    color: #ffbc4c;
+    font-size: 25px;
+}
+.star:checked::after,
+.star:has(~ .star:checked)::after{
+    content: '★';
+}
+.place_detail_box{
+    width: 1100px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    border-top: 2px #7C838A solid;
+    padding-top: 40px;
+} 
+.place_detail_imgbox{
+    width: 100%;
+    height: 500px;
+    
+}
+.place_detail_img{
+    width: 100%;
+    height: 100%;
+}
+.place_detail_box01{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+.place_detail01{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.place_detail02{
+    display: flex;
+    flex-direction: column;
+    
+    height: 100%;
+    gap: 30px;
+}
+.place_detail_text01{
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.review_star_text{
+    font-size: 20px;
+    font-weight: bold;
+}
+.place_detail01_box02{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: fit-content;
+}
+.place_detail01_box01{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.place_pagemove_box{
+    border-top: 2px #7C838A solid;
+    border-bottom: 2px #7C838A solid;
+    width: 100%; 
+    margin-bottom: 30px;
+}
+.place_pagebox{
+    display: flex;
+    border-top: 2px #7C838A solid;
+    padding: 5px 30px;
+    gap: 40px;
+}
+.place_detail_text03{
+    color: #7C838A;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.place_detail_text04{
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.submit_button {
+    display: inline-block;
+    text-align: center;
+    background-color: #ffbc4c;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+.pagemove_a{
+    text-decoration: none;
+    color: black;
+}

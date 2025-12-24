@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  /* #004E89 기반 색상 팔레트 */
+  --primary-color: #004E89;
+  --primary-dark: #003366;
+  --primary-darker: #002244;
+  --primary-light: #0059A3;
+  --primary-lighter: #0066C0;
+  --secondary-color: #0077B6;
+  --accent-color: #0096C7;
+  --bg-gradient: linear-gradient(135deg, #004E89 0%, #0077B6 100%);
+  --bg-gradient-light: linear-gradient(135deg, #e8f4f8 0%, #f0f9ff 100%);
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a5568;
+  --text-light: #718096;
+  --border-color: #e2e8f0;
+  --border-primary: #004E89;
+  --success-color: #48bb78;
+  --error-color: #f56565;
+  --shadow-sm: 0 1px 3px 0 rgba(0, 78, 137, 0.1), 0 1px 2px 0 rgba(0, 78, 137, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 78, 137, 0.1), 0 2px 4px -1px rgba(0, 78, 137, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 78, 137, 0.1), 0 4px 6px -2px rgba(0, 78, 137, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 78, 137, 0.1), 0 10px 10px -5px rgba(0, 78, 137, 0.04);
+}

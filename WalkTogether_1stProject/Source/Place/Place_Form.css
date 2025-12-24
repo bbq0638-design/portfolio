@@ -1,0 +1,256 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    align-items: center;
+    height: 120px;
+    z-index: 1;
+}
+
+header img {
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+header .menu {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+    gap: 80px;
+    margin-top: 80px;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+header .menu li a:hover {
+    color: #ffbc4c;
+}
+
+
+header .login_status,
+header .logout_status {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: center;
+}
+
+
+header .login_status .profile_image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+header .login_status img {
+    width: 40px;
+    height: 40px;
+}
+
+.sub_header {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 120px;
+    background-color: #ffbc4c;
+}
+.sub_header_text01{
+    font-size: 45px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+} 
+.sub_header_text02{
+    font-size: 38px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+}
+.main{
+    width: 1100px;
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 50px;
+    border-top: 2px black solid;
+}
+.star_rating{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.star{
+    appearance: none;
+    padding: 1px;
+}
+.star::after{
+    content: '☆';
+    color: #ffbc4c;
+    font-size: 25px;
+}
+.star:hover::after,
+.star:has(~ .star:hover)::after,
+.star:checked::after,
+.star:has(~ .star:checked)::after{
+    content: '★';
+}
+.star:hover ~ .star::after{
+    content: '☆';
+}
+footer{
+    background-color: #7C838A;
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+}
+.edit_title{
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
+}
+.edit_box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 50px;
+}
+.edit_placetext{
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.edit_textbox{
+    width: 100%;
+    border: 2px #7C838A solid;
+    font-size: 20px;
+    height: 50px;
+    padding: 0 10px;
+}
+.place_textarea{
+    width: 100%;
+    height: 300px;
+    border: 2px #7C838A solid;
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+}
+.star_rating{
+    display: flex;
+}
+.star{
+    appearance: none;
+    padding: 1px;
+}
+.star::after{
+    content: '☆';
+    color: #ffbc4c;
+    font-size: 25px;
+}
+.star:hover::after,
+.star:has(~ .star:hover)::after,
+.star:checked::after,
+.star:has(~ .star:checked)::after{
+    content: '★';
+}
+.star:hover ~ .star::after{
+    content: '☆';
+}
+.edit_placetext02{
+    font-size: 20px;
+    font-weight: bold;
+}
+.edit_warningbox{
+    font-weight: bold;
+    color: #7C838A;
+}
+.Line{
+    border: 1px #7C838A solid;
+}
+.submit_button {
+    text-align: center;
+    background-color: #ffbc4c;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.user_place_style {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #9ca3af;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.user_input_file_style {
+    display: none;
+}
+.user_place_noimg_style {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.delete-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    z-index: 10;
+}
+
+.delete-button:hover {
+    opacity: 1;
+}
+.submit_box{
+    text-align: center;
+}

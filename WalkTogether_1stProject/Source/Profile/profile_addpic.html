@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로필 피드</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <!--나중에 수정-->
+    <link rel="stylesheet" href="../header/header_login/header_login.css">
+    <link rel="stylesheet" href="profile_addpic.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+        <ul class="menu">
+            <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+            <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+            <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+            <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+        </ul>
+        <ul class="logout_status">
+            <li class="login"><a href="../login/login_user.html">로그인</a></li>
+            <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+        </ul>
+        <ul class="login_status">
+            <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+            <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+            <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+            <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+        </ul>
+    </header>
+
+    <!--메인-->
+<main>
+    <div class="sub_header">
+        <h2>게시글 작성</h2>
+        <span>나의 댕댕이와 일상을 공유해보세요!</span>
+    </div>
+
+    <div class="main">
+        <hr class="line1">
+
+        <div class="post_section">
+            <p>게시물 작성</p>
+            <form>
+                <div class="post_content">
+                    <div class="pic_1">
+                        <img src="../image/kuro.jpg" alt="프로필 사진">
+                    </div>
+                    <div class="pics">
+                        <img src="../image/noimage.png" alt="사진1">
+                        <img src="../image/noimage.png" alt="사진2">
+                        <img src="../image/noimage.png" alt="사진3">
+                        <img id="plus" src="../image/noimage.png" alt="사진4">
+                    </div>
+                    <!--<button style="width: 10%; height: 100%; border-radius: 100%;">
+                        <i class="fa-solid fa-plus"></i>-->
+                    <label for="file_upload" class="add-btn">
+                        <input id="file_upload" type="file" style="display: none;">
+                        <i class="fa-solid fa-plus"></i>
+                    </label>
+
+                </div>
+
+                <div class="post_caption">
+                    <textarea placeholder="게시글 입력..."></textarea>
+                </div>
+
+                <hr class="line2">
+
+                <div class="buttons">
+                    <div class="button1">
+                        <input onclick="confirm_message()" type="submit" value="공유하기">
+                    </div>
+                    <div class="button2">
+                        <input type="reset" value="취소">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<script src="../header/header.js"></script>
+<script>
+    function confirm_message(){
+        alert('공유가 완료되었습니다.');
+    }
+</script>
+</body>
+</html>

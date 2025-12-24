@@ -1,0 +1,200 @@
+/* ====== 레이아웃 기본(헤더 고정 가정) ====== */
+main{
+  padding-top:130px;
+  margin:0 150px 150px;
+  box-sizing:border-box;
+  font-family: "Noto Sans KR", system-ui, -apple-system, sans-serif;
+}
+
+/* ====== 상단 배너 ====== */
+.sub_header{
+  width:100%;
+  height:250px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+  font-weight:700;
+  background:#ffbc4c;
+  margin:0 auto;
+}
+
+/* ====== 좌측 관리자 메뉴 ====== */
+.admin_menu{
+  margin-top:30px;
+  padding:20px;
+  border:1px solid #ccc;
+  width:200px;
+  float:left;
+  text-align:center;
+  min-height:750px;
+
+  /* admin_list와 간격 띄우기 */
+  margin-right:40px;
+}
+.admin_profile img{
+  width:100px;height:100px;border-radius:50%;margin-bottom:10px;object-fit:cover;
+}
+.admin_id{font-weight:700;margin-top:6px;}
+.admin_menu a{
+  display:block;text-decoration:none;color:#000;font-weight:700;
+  margin:38px 0;padding:10px;
+}
+.admin_menu a:hover{color:#ffbc4c;}
+
+/* ====== 우측 콘텐츠 래퍼 ====== */
+.admin_list{
+  margin-left:260px;   /* 좌측 메뉴(200) + 여백 */
+  margin-top:30px;
+  height:750px;
+  display: flow-root; 
+}
+.admin_list h2{
+  font-size:22px;
+  font-weight:800;
+  margin:24px 0;
+}
+
+/* ====== 공지 폼 ====== */
+.notice_form{
+  display:block;
+  margin:24px 0 8px;
+  color:#111;
+  line-height:1.6;
+
+}
+
+.notice_title_wrap,
+.notice_must {
+  display: flex;
+  flex-direction: row; /* 세로 배치 */
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* "제목" 라벨(텍스트 노드)은 그대로 두고 입력창만 스타일 */
+.notice_title {
+  display:block;
+  width:90%;
+  height:52px;
+  margin:8px auto auto auto;            /* "제목" 텍스트와 간격 */
+  padding:0 20px;
+  border:2px solid #8e97a0;
+  border-radius:28px;
+  background:#fff;
+  font-size:16px;
+  outline:none;
+  box-sizing:border-box;
+}
+.notice_title::placeholder{color:#9aa3aa;}
+
+/* "필독 표시" 줄: p은 라벨처럼 보이게 */
+.notice_form p{
+  margin-top:18px;
+  font-weight:bold;
+  margin-right:16px;
+  vertical-align:middle;
+}
+
+/* 라디오 그룹: 예/아니오를 한 줄 가로 배치 */
+.notice_radio_group{
+  display:inline-flex;
+  gap:12px;
+  align-items:center;
+  vertical-align:middle;
+  white-space:nowrap;
+  margin-left:10px;
+}
+
+/* 라디오 숨기고 label을 pill로 */
+.notice_radio_group input[type="radio"]{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+.notice_radio_group input[type="radio"] + label{
+  display:inline-block;
+  padding:10px 18px;
+  border:2px solid #8e97a0;
+  border-radius:999px;
+  background:#fff;
+  color:#111;
+  line-height:1;
+  cursor:pointer;
+  user-select:none;
+  font-size:16px;
+}
+.notice_radio_group input[type="radio"]:checked + label{
+  background:#ffcfcf;
+  border-color:#ff6b6b;
+}
+
+/* ====== 내용 영역 (textarea) ====== */
+.notice_content{
+  width:99%;
+  margin:20px 0;         /* 위아래 간격 */
+  color:#111;
+}
+.notice_content > :first-child{
+  display:block;
+  font-weight:700;
+  margin-bottom:10px;    /* "내용" 라벨과 textarea 간격 */
+}
+.notice_content textarea,
+#add_notice_content{
+  width:100%;
+  min-height: 520px;
+  /*min-height:220px;*/
+  padding:14px 20px;
+  border:2px solid #8e97a0;
+  border-radius:10px;
+  box-sizing:border-box;
+  font-size:16px;
+  line-height:1.6;
+  background:#fff;
+  outline:none;
+  resize:vertical;       /* 세로 크기만 조절 */
+}
+.notice_content textarea:focus,
+#add_notice_content:focus{
+  border-color:#ff6b6b;
+  box-shadow:0 0 0 3px rgba(255,107,107,0.15);
+}
+.notice_content textarea::placeholder,
+#add_notice_content::placeholder{
+  color:#9aa3aa;
+}
+
+/* ====== 하단 버튼 (다른 코드 복사 예정이면 기본 톤만) ====== */
+.delete,
+.add{
+  border:none;
+  padding:12px 20px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:16px;
+  margin-top:16px;
+}
+.delete{
+  background:#fff;
+  border:2px solid #cfcfcf;
+  margin-right:8px;
+}
+.add{
+  background:#ffbc4c;
+}
+.add a{
+  display:block;
+  text-decoration:none;
+  color:#000;
+}
+
+.button_set {
+  margin-top: 30px;
+  margin-right: 15px;
+  float: right;
+}
+
+/* ====== 유틸 ====== */
+.point{color:#e60012;} /* 별표(*) 강조 색상 */

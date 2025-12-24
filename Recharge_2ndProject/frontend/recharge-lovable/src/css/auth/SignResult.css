@@ -1,0 +1,135 @@
+.signresult_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 60px 40px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.signresult_header {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.signresult_header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 12px 0;
+  letter-spacing: -0.02em;
+}
+
+.signresult_subtitle {
+  font-size: 17px;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.signresult_content {
+  width: 100%;
+  background: var(--bg-white);
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.signresult_message {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(0, 78, 137, 0.05) 0%, rgba(0, 102, 179, 0.05) 100%);
+  border-radius: 12px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.signresult_message h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 12px 0;
+}
+
+.signresult_message h4 {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.signresult_move_action_btn {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.move_recharger_btn,
+.move_movie_btn {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #004E89 0%, #0066b3 100%);
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  letter-spacing: -0.01em;
+  min-width: 180px;
+}
+
+.move_recharger_btn:hover,
+.move_movie_btn:hover {
+  background: linear-gradient(135deg, #0066b3 0%, #0080d4 100%);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.move_recharger_btn:active,
+.move_movie_btn:active {
+  transform: translateY(0);
+}
+
+.move_recharger_btn a,
+.move_movie_btn a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 100%;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .signresult_main {
+    padding: 40px 20px;
+  }
+
+  .signresult_header h1 {
+    font-size: 28px;
+  }
+
+  .signresult_subtitle {
+    font-size: 15px;
+  }
+
+  .signresult_content {
+    padding: 30px 20px;
+  }
+
+  .signresult_move_action_btn {
+    flex-direction: column;
+  }
+
+  .move_recharger_btn,
+  .move_movie_btn {
+    width: 100%;
+  }
+}

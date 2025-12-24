@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.recharge.backend.charger.dao.ChargerDAO">
+
+    <select id="existsCharger" parameterType="map" resultType="int">
+        SELECT COUNT(*)
+        FROM TB_CHARGER
+        WHERE STATION_ID = #{stationId}
+        AND CHARGER_ID = #{chargerId}
+    </select>
+
+    <insert id="insertCharger" parameterType="com.recharge.backend.charger.vo.ChargerVO">
+        INSERT INTO TB_CHARGER (
+        CHARGER_ID,
+        STATION_ID,
+        CHARGER_PROVIDER,
+        CHARGER_TYPE,
+        CHARGER_SPEED,
+        CHARGER_TOTAL,
+        CREATE_DATE,
+        CREATE_ID,
+        UPDATED_DATE,
+        UPDATED_ID
+        ) VALUES (
+        #{chargerId},
+        #{stationId},
+        #{chargerProvider},
+        #{chargerType},
+        #{chargerSpeed, jdbcType=VARCHAR},
+        #{chargerTotal, jdbcType=INTEGER},
+        SYSDATE,
+        #{createId},
+        SYSDATE,
+        #{updateId}
+        )
+    </insert>
+
+    <select id="findByStationId" parameterType="string" resultType="com.recharge.backend.charger.vo.ChargerVO">
+        SELECT *
+        FROM TB_CHARGER
+        WHERE STATION_ID = #{stationId}
+        ORDER BY CHARGER_ID
+    </select>
+
+    <select id="findByStationIds" resultType="com.recharge.backend.charger.vo.ChargerVO">
+        SELECT *
+        FROM TB_CHARGER
+        WHERE STATION_ID IN
+        <foreach collection="stationIds" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+        ORDER BY STATION_ID, CHARGER_ID
+    </select>
+
+</mapper>

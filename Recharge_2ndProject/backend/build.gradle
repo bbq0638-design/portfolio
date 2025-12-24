@@ -1,0 +1,83 @@
+plugins {
+    id 'java'
+    id 'war'
+    id 'org.springframework.boot' version '3.5.7'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.recharge'
+version = '0.0.1-SNAPSHOT'
+description = 'recharge project backend'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot 기본 웹
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // MyBatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.5'
+
+    // WebFlux (비동기 처리용)
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'io.projectreactor:reactor-core'
+
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // 개발 편의 도구
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Oracle JDBC
+    runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+
+    // Tomcat (WAR 배포용)
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+
+    // Spring Security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.security:spring-security-crypto'
+
+    // Spring Mail
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+    // 테스트
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // Spring Boot BOM (버전 통일)
+    implementation platform('org.springframework.boot:spring-boot-dependencies:3.2.5')
+
+
+    // Spring Boot BOM (버전 통일)
+
+
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.0'
+    implementation 'org.glassfish.jaxb:jaxb-runtime:4.0.0'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+    implementation 'org.json:json:20231013'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

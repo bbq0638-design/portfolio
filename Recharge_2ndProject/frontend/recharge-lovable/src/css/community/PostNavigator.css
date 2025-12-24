@@ -1,0 +1,55 @@
+/* ===== 이전/다음 글 네비게이션 ===== */
+.community_detail-nav {
+  margin-top: 40px;
+  border-top: 2px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
+  background: #f9f9f9;
+  overflow: hidden;
+}
+
+.community_nav-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background 0.3s ease;
+}
+
+.community_nav-section:hover {
+  background: rgba(0, 78, 137, 0.05);
+}
+
+.community_nav-section:last-child {
+  border-bottom: none;
+}
+
+.community_nav-label {
+  width: 100px;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+.community_nav-line {
+  width: 1px;
+  height: 16px;
+  background: #e0e0e0;
+}
+
+.community_nav-item {
+  cursor: pointer;
+  color: #666666;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.community_nav-item:hover {
+  color: #004E89;
+}
+
+.community_nav-item.disabled {
+  color: #999999;
+  cursor: default;
+}

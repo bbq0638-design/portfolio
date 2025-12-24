@@ -1,0 +1,145 @@
+.airprompt_overlay {
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    z-index: 9998;
+}
+
+.airprompt_modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    z-index: 9999;
+    width: min(720px, 95%);
+    max-height: 85vh;
+    overflow: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    padding: 1.25rem 1.25rem 1.5rem;
+}
+
+/* 헤더 */
+.airprompt_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.airprompt_header h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.airprompt_icon_btn {
+    border: #fff;
+    background: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0.35rem;
+}
+
+/* 탭 */
+.airprompt_tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+.airprompt_tab {
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s ease;
+}
+.airprompt_tab.active {
+    border-color: #004e89;
+    background-color: #004e89;
+    color: white;
+}
+.airprompt_tab:hover {
+    background: #004e89;
+    color: white;
+}
+
+
+.airprompt_form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.airprompt_input {
+    flex: 1;
+    height: 42px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0 0.75rem;
+}
+
+.airprompt_submit {
+    height: 42px;
+    min-width: 110px;
+    border: none;
+    border-radius: 8px;
+    background: #004e89;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.airprompt_movie_lists {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+}
+.airprompt_movie_card {
+    width: 185px;
+    height: 278px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #004e89;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.25s ease;
+}
+.airprompt_movie_card:hover {
+    transform: translateY(-5%);
+}
+.airprompt_movie_link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.airprompt_movie_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 빈 상태 */
+.airprompt_empty {
+    grid-column: 1 / -1;
+    height: 200px;
+    width: 680px;
+    padding: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #6c7782;
+    border: 1px dashed #e0e4e8;
+    border-radius: 8px;
+    background: #f8f8f9;
+}

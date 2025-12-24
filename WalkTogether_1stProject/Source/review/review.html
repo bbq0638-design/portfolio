@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>우리걷개</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="review.css">
+        <link rel="stylesheet" href="../header/header.css">
+    </head>
+    <body>
+        <header>
+            <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+            <ul class="logout_status">
+                <li class="login"><a href="../login/login_user.html">로그인</a></li>
+                <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+            </ul>
+            <ul class="login_status">
+                <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+                <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+                <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+                <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+            </ul>
+        </header>
+        <main>
+           <div class="sub_header">
+               <h1>메이트 산책 후기</h1>
+               <p>메이트와의 산책 후기, 매너점수를 확인하고<br>
+                  메이트 신청을 해보세요!</p>
+            </div>
+            <form>
+                <div class="review_main">
+                    <div class="review_title">
+                        <img src="../image/kuro.jpg" alt="profile_image" onclick="location.href='../Profile/Profile.html'"> 
+                        <h3>쿠로와 함께한 산책 후기</h3>
+                        <div class="score" href="#">
+                            <h3 style="margin-right:200px;">매너점수</h3>
+                            <h3>90점</h3>
+                            <div class="bar-wrap">
+                                <div class="bar">
+                                    <div class="fill"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><hr class="main_line">
+                    <div class="review_row">
+                        <div class="user">
+                            <img src="../image/bomsik.png" style="width:50px; height:50px;">
+                            <p style="font-weight:bold; font-size:15px; text-align: center;">김봄식<br>아산 비숑</p>
+                        </div>
+                        <p style="text-align: center; font-weight:bold;">쿠로가 너무 활발하고 집사님이 너무 착해요<br>
+                        다음에도 또 같이 산책하고 싶어요~!</p>
+                        <div class="submit_button">
+                            <button><a href="../Profile/Profile.html">피드로 이동</a></button>
+                        </div>
+                    </div><hr>
+                    <div class="review_row">
+                        <div class="user">
+                            <img src="../image/gongju.png" style="width:50px; height:50px;">
+                            <p style="font-weight:bold; font-size:15px; text-align: center;">공주<br>천안 말티즈</p>
+                        </div>
+                        <p style="text-align: center; font-weight:bold;">이사온지 얼마 안되었는데 집사님한테 많은 정보 얻었어요!<br>
+                        저희 공주는 나이가 많아 쿠로는 좀 버겁습니다ㅠㅠ</p>
+                        <div class="submit_button">
+                            <button><a href="../Profile/Profile.html">피드로 이동</a></button>
+                        </div>
+                    </div><hr>
+                    <div class="review_row">
+                        <div class="user">
+                            <img src="../image/cong.png" style="width:50px; height:50px;">
+                            <p style="font-weight:bold; font-size:15px; text-align: center;">콩이<br>아산 믹스견</p>
+                        </div>
+                        <p style="text-align: center; font-weight:bold;">집사가 너무착하고, 댕댕이가 너무 귀여워요.</p>
+                        <div class="submit_button">
+                            <button><a href="../Profile/Profile.html">피드로 이동</a></button>
+                        </div>
+                    </div><hr>           
+                </div>
+                <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#" id="no1">1</a>
+                    <a href="#" id="no2">2</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </form>
+        </main>
+        <footer>
+            푸터  
+        </footer>
+    <script src="../header/header.js"></script>
+    </body>
+</html>

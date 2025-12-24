@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="notice_detail.css"/>
+
+</head>
+<body>
+    <!--헤더-->
+        <header>
+            <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+            <ul class="logout_status">
+                <li class="login"><a href="../login/login_user.html">로그인</a></li>
+                <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+            </ul>
+            <ul class="login_status">
+                <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+                <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+                <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+                <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+            </ul>
+        </header>
+
+    <!--본문-->
+    <main>
+        <div class="sub_header">
+            <h2>공지사항</h2>
+        </div>
+        <div class="main">
+            <div class="title">
+                <span class="title_name">주말 단체 산책 프로그램 참가자 모집</span>
+                <span class="date">2025-09-08</span>
+            </div>
+
+            <div class="content">
+                <p>안녕하세요, 같이 걷개입니다!</p>
+                <p>다가오는 주말, 반려견과 함께하는 특별한 단체 산책 프로그램에 여러분을 초대합니다. 이번 프로그램은 반려견의 사회화와 운동을 촉진하고, 보호자들 간의 교류를 도모하기 위해 기획되었습니다.</p>
+                <h3>프로그램 세부 사항:</h3>
+                <ul>
+                    <li><strong>일시:</strong> 2025년 9월 14일 (토요일), 오전 10시 - 오후 12시</li>
+                    <li><strong>장소:</strong> 서울숲 공원 내 지정된 산책로</li>
+                    <li><strong>참가 대상:</strong> 모든 반려견과 보호자 (사전 등록 필수)</li>
+                    <li><strong>참가비:</strong> 무료</li>
+                </ul>
+                <h3>프로그램 내용:</h3>
+                <ul>
+                    <li>반려견 사회화 훈련 세션</li>
+                    <li>전문가와 함께하는 산책 가이드</li>
+                    <li>보호자 네트워킹 시간</li>
+                    <li>간단한 간식 제공</li>
+                </ul>
+                <p>참가를 원하시는 분들은 아래 링크를 통해 사전 등록을 해주시기 바랍니다. 등록 마감은 2025년 9월 12일(목)까지이며, 선착순으로 마감될 수 있으니 서둘러 주세요!</p>
+                <p><a href="#">[사전 등록 링크]</a></p>
+                <p>많은 관심과 참여 부탁드리며, 반려견과 함께 즐거운 시간을 보내시길 바랍니다!</p>
+                <p>감사합니다.</p>
+                <p>같이 걷개 드림</p>
+            </div>
+        </div>
+        <div class="pagination-nav">
+            <div class="pagination-row">
+                <span class="pagination-label">이전</span>
+                <div class="pagination-title">
+                <a href="#">이번 주 인기 플레이스 TOP 5</a>
+            </div>
+        </div>
+        <div class="pagination-row">
+            <span class="pagination-label">다음</span>
+            <div class="pagination-title">
+                <a href="#"></a>
+            </div>
+        </div>
+</div>
+        <div class="back_button">
+            <a href="notice_main.html" class="btn=back">목록</a>
+        </div>
+    </main> 
+    <!--푸터-->
+    <script src="../header/header.js"></script>
+</body>
+</html>

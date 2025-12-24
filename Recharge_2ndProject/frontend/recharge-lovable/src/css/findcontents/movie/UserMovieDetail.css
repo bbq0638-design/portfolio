@@ -1,0 +1,260 @@
+.usermoviedetail_container {
+    padding: 2rem 10rem;
+    text-align: center;
+    background-color: #f8f9f9;
+}
+
+.usermoviedetail_movie{
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 2rem;
+}
+
+.usermoviedetail_movie_poster img{
+    width: 300px;
+    height: 450px;
+    border-radius: 6px;
+}
+
+.usermoviedetail_movie_info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    min-height: 450px;
+}
+
+.usermoviedetail_movie_info_title {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.usermoviedetail_movie_info_meta{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.usermoviedetail_movie_info_meta_row1 {
+    display: flex;
+    text-align: left;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.usermoviedetail_movie_info_meta_chip1{
+    color: #67777e;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.usermoviedetail_movie_info_meta_row2{
+    display: grid;
+    text-align: left;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.usermoviedetail_movie_info_meta_row3{
+    height: 10rem;
+    color: #67777e;
+    text-align: left;
+}
+
+.usermoviedetail_movie_info_meta_favorite {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+    text-align: left;
+}
+
+
+.usermoviedetail_addFavorite{
+    display: inline-flex;    
+    align-items: center;
+    gap: 0.4rem;   
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #004e89;
+    background-color: #004e89;
+    color: white;
+    cursor: pointer;
+}
+
+.usermoviedetail_addFavorite.primary {
+    background-color: #004e89;
+    color: white;
+}
+
+.usermoviedetail_addFavorite.primary:hover {
+    background-color: white;
+    color: #004e89;
+    transition: 0.2s ease;
+}
+
+.usermoviedetail_addFavorite.outline {
+    background-color: white;
+    color: #004e89;
+}
+
+.usermoviedetail_addFavorite.outline:hover {
+    background-color: #004e89;
+    color: white;
+    transition: 0.2s ease;
+}
+
+.usermoviedetail_goTrailer{
+    display: flex;
+    gap: 0.4rem;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #004e89;
+    background-color: #004e89;
+    color: white;
+    cursor: pointer;
+    display: inline-flex;    
+    align-items: center;
+}
+
+.usermoviedetail_content {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2rem;
+}
+
+.usermoviedetail_title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.usermoviedetail_user{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.usermoviedetail_user span:first-child{
+    color: #67777e;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.usermoviedetail_user span:last-child{
+    color: #004e89;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.usermoviedetail_text{
+    height: 10rem;
+}
+
+.usermoviedetail_comment{
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.usermoviedetail_comment_title{
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.usermoviedetail_comment_post {
+    display: flex;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+}
+
+.usermoviedetail_comment_post input {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+}
+
+.usermoviedetail_comment_post button {
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #004e89;
+    background-color: #004e89;
+    color: white;
+    cursor: pointer;
+}
+
+.usermoviedetail_comment_lists {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.usermooviedetail_comment_list {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.usermoviedetail_comment_user {
+  display: flex;
+  align-items: center;
+}
+
+/* 아이디 오른쪽에 시간 붙여놓기 */
+.usermoviedetail_comment_time {
+  margin-left: 0.5rem; /* 아이디와 시간 간격 */
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Edit/Delete를 오른쪽 끝으로 밀기 */
+.usermoviedetail_comment_btn {
+  margin-left: auto; 
+  display: flex;
+  gap: 1rem;
+}
+
+.usermoviedetail_comment_edit,
+.usermoviedetail_comment_delete {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #1f70b7;
+  font-weight: 600;
+}
+.usermoviedetail_comment_edit:hover,
+.usermoviedetail_comment_delete:hover {
+  text-decoration: underline;
+}
+
+/* 보강: 아이디/본문 가독성 */
+.usermoviedetail_comment_id {
+  font-weight: 700;
+  color: #111827;
+}
+.usermoviedetail_comment_text {
+  display: block;
+  margin-top: 0.5rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.usermoviedtail_findmovie a{
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #004e89;
+}

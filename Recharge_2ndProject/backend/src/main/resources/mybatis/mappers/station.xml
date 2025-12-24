@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.recharge.backend.station.dao.StationDAO">
+
+    <select id="existsStation" parameterType="String" resultType="int">
+        SELECT COUNT(*)
+        FROM TB_STATION
+        WHERE STATION_ID = #{stationId}
+    </select>
+
+    <insert id="insertStation" parameterType="com.recharge.backend.station.vo.StationVO">
+        INSERT INTO TB_STATION (
+        STATION_ID,
+        STATION_NAME,
+        STATION_LATITUDE,
+        STATION_LONGITUDE,
+        STATION_ADDRESS,
+        STATION_ADDRESS_DETAIL,
+        STATION_PARKING_FREE,
+        CREATE_DATE,
+        CREATE_ID,
+        UPDATED_DATE,
+        UPDATED_ID
+        ) VALUES (
+        #{stationId},
+        #{stationName},
+        #{stationLatitude},
+        #{stationLongitude},
+        #{stationAddress},
+        #{stationAddressDetail},
+        #{stationParkingFree},
+        SYSDATE,
+        #{createId},
+        SYSDATE,
+        #{updateId}
+        )
+    </insert>
+
+    <update id="updateStation" parameterType="com.recharge.backend.station.vo.StationVO">
+        UPDATE TB_STATION
+        SET
+        STATION_NAME = #{stationName},
+        STATION_LATITUDE = #{stationLatitude},
+        STATION_LONGITUDE = #{stationLongitude},
+        STATION_ADDRESS = #{stationAddress},
+        STATION_ADDRESS_DETAIL = #{stationAddressDetail},
+        STATION_PARKING_FREE = #{stationParkingFree},
+        UPDATED_DATE = SYSDATE,
+        UPDATED_ID = #{updateId}
+        WHERE STATION_ID = #{stationId}
+    </update>
+
+    <select id="findNearbyStations"
+            parameterType="map"
+            resultType="com.recharge.backend.station.vo.StationVO">
+
+        SELECT
+        STATION_ID,
+        STATION_NAME,
+        STATION_LATITUDE,
+        STATION_LONGITUDE,
+        STATION_ADDRESS,
+        STATION_ADDRESS_DETAIL,
+        STATION_PARKING_FREE,
+
+        ROUND(
+        (
+        6371 * 2 *
+        ASIN(
+        SQRT(
+        POWER(SIN(((STATION_LATITUDE - #{lat}) * 3.14159265358979 / 180) / 2), 2)
+        +
+        COS(#{lat} * 3.14159265358979 / 180)
+        * COS(STATION_LATITUDE * 3.14159265358979 / 180)
+        * POWER(SIN(((STATION_LONGITUDE - #{lng}) * 3.14159265358979 / 180) / 2), 2)
+        )
+        )
+        )
+        , 1) AS distanceKm
+
+        FROM TB_STATION
+
+        WHERE STATION_LATITUDE IS NOT NULL
+        AND STATION_LONGITUDE IS NOT NULL
+
+        AND (
+        6371 * 2 *
+        ASIN(
+        SQRT(
+        POWER(SIN(((STATION_LATITUDE - #{lat}) * 3.14159265358979 / 180) / 2), 2)
+        +
+        COS(#{lat} * 3.14159265358979 / 180)
+        * COS(STATION_LATITUDE * 3.14159265358979 / 180)
+        * POWER(SIN(((STATION_LONGITUDE - #{lng}) * 3.14159265358979 / 180) / 2), 2)
+        )
+        )
+        ) <![CDATA[ <= ]]> #{radius}
+
+        ORDER BY distanceKm ASC
+
+    </select>
+</mapper>

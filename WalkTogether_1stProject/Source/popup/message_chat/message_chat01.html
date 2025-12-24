@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메시지 채팅</title>
+    <link rel="stylesheet" href="message_chat.css" />
+</head>
+<body>
+    <div id="header">홍길동</div>
+    <ul class="message_list" id="msgList">
+        <li class="message_item other" id="requestCard">
+            <div class="profile">
+                <img src="../../image/noimage.png" alt="No Image" />
+            </div>
+            <div class="message_content">
+                <strong>홍길동</strong><br />
+                홍길동님께서 산책메이트 신청을 하셨습니다!<br />
+                수락 버튼을 눌러 메이트가 되어보아요!<br />
+                <button class="accept-btn" id="acceptBtn">메이트 수락</button>
+                <button class="reject-btn" id="rejectBtn">거절</button>
+            </div>
+        </li>
+    </ul>
+    <div class="chatting-box">
+        <input type="text" id="msgInput" placeholder="메세지를 입력하세요" />
+        <button id="sendBtn">전송</button>
+    </div>
+    <script>
+        function nowStr() {
+            const d = new Date();
+            let h = d.getHours(), m = String(d.getMinutes()).padStart(2, "0");
+            const ampm = h >= 12 ? "오후" : "오전";
+            h = h % 12 || 12;
+            return `${ampm} ${h}:${m}`;
+        }
+
+        function appendMessage(text, isMine = true) {
+            const ul = document.getElementById("msgList");
+            const li = document.createElement("li");
+            li.className = isMine ? "message_item my" : "message_item other";
+
+            if (isMine) {
+                li.innerHTML = `
+                    <div class="message_content">
+                        ${text}<br />
+                        <small>${nowStr()}</small>
+                    </div>`;
+            } else {
+                li.innerHTML = `
+                    <div class="profile"><img src="../image/noimage.png" alt="No Image" /></div>
+                    <div class="message_content">
+                        ${text}<br />
+                        <small>${nowStr()}</small>
+                    </div>`;
+            }
+
+            ul.appendChild(li);
+            ul.scrollTop = ul.scrollHeight;
+        }
+
+        function handleDecision(accepted) {
+            if (accepted) {
+                appendMessage("메이트 신청을 수락했어요!<br>대화를 나눠보세요!", true);
+            } else {
+                appendMessage("상대방이 메이트 신청을 거절하였습니다.", true);
+            }
+            document.getElementById("acceptBtn").disabled = true;
+            document.getElementById("rejectBtn").disabled = true;
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("msgInput");
+            const text = input.value.trim();
+            if (!text) return;
+            appendMessage(text, true);
+            input.value = "";
+        }
+
+        // 이벤트 연결
+        document.getElementById("acceptBtn").addEventListener("click", () => handleDecision(true));
+        document.getElementById("rejectBtn").addEventListener("click", () => handleDecision(false));
+        document.getElementById("sendBtn").addEventListener("click", sendMessage);
+        document.getElementById("msgInput").addEventListener("keydown", (e) => {
+            if (e.key === "Enter") sendMessage();
+        });
+    </script>
+</body>
+</html>

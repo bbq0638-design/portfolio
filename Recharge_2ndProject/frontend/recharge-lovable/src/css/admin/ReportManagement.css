@@ -1,0 +1,216 @@
+
+.admin_nav_container {
+    position: fixed;
+    width: 150px;
+    background: #032B48;
+    padding: 10px 10px;
+    height: 100%;
+}
+
+.admin_nav_container h2 {
+    color: white;
+}
+
+.admin_content_nav {
+    list-style: none;
+}
+
+.admin_content_nav li {
+    margin-bottom: 10px;
+}
+
+.admin_content_nav a {
+    display: block;
+    padding: 12px 0px;
+    margin-left: -20px;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.reportManagement_main_content {
+    padding-left: 300px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.reportmanagement_posts_table {
+    margin-top: 20px;
+    width: 95%;
+    border-top: solid 2px #7C838A;
+    border-bottom: solid 2px #7C838A;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.reportmanagement_tabs_list{
+    display: flex;
+    justify-self: center;
+}
+.reportmanagement_tabs {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100px;
+    background-color: white;
+    border: #032B48 1px solid;
+    
+}
+.reportmanagement_posts_table_col1 {
+    width: 8%;
+}
+.reportmanagement_posts_table_col2 {
+    width: 20%;
+}
+.reportmanagement_posts_table_col3 {
+    width: 20%;
+}
+.reportmanagement_posts_table_col4 {
+    width:10%;
+}
+.reportmanagement_posts_table_col5 {
+    width:8%;
+}
+.reportmanagement_posts_table_col6 {
+    width:10%;
+}
+.reportmanagement_posts_table_col7 {
+    width:10%;
+}
+.reportmanagement_posts_table_col8 {
+    width:14%;
+}
+
+
+.UserManagement_form1 select {
+    padding-left: 10px;
+    font-size: 1rem;
+    border: 1px solid black;
+    background-color: white;
+    height: 30px;
+    width: 12%;
+    border-radius: 4px;           
+    box-sizing: border-box;
+}
+
+.UserManagement_form1 input[type="text"] {
+    padding-left: 10px;
+    margin-left: 10px;
+    font-size: 1rem;
+    border: 1px solid black;
+    background-color: white;
+    height: 30px;
+    width: 20%;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.UserManagement_table input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.UserManagement_form1 select:nth-of-type(2) {
+    margin-left: 50px;
+    width: 18%; 
+}
+
+.UserManagement_form1 button {
+    height: 30px;           
+    box-sizing: border-box;
+    border: 1px solid #474646;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#UserManagement_view_btn {
+    color: black;
+    margin-left: 10px;
+    width: 50px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#UserManagement_delete{
+    border: 1.5px solid #f14122;
+    color: #f14122;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 2px;
+    cursor: pointer;
+}
+#write_btn {
+         
+    box-sizing: border-box;
+    border: 1px solid #474646;
+    border-radius: 4px;
+    color: white;
+    background-color: #032B48;
+    margin-right: 5%;
+    float: right;
+    height: 35px;
+}
+
+.UserManagement_table {
+    margin-top: 20px;
+    width: 95%;
+    border-top: solid 2px #7C838A;
+    border-bottom: solid 2px #7C838A;
+    border-collapse: collapse;
+    text-align: center;
+    
+}
+
+.UserManagement_table th,
+.UserManagement_table td {
+    border: 1px solid #7C838A;  /* 모든 칸에 테두리 */
+    padding: 2px;
+}
+
+.UserManagement_table td{
+    min-height: 40px;
+    padding: 4px;
+}
+
+
+#UserManagement_table_checkbox{
+    width: 10%;
+}
+#UserManagement_table_id{
+    width: 20%;
+}
+#UserManagement_table_email{
+    width: 35%;
+}
+#UserManagement_table_name{
+    width: 10%;
+}
+#UserManagement_table_role {
+    width: 10%;
+}
+#UserManagement_state{
+    width: 15%;
+}
+
+.UserManagement_form2 {
+    margin-top: 10px;
+}
+.UserManagement_form2 select {
+    padding-left: 10px;
+    font-size: 1rem;
+    border: 1px solid black;
+    background-color: white;
+    height: 35px;
+    width: 20%;
+    border-radius: 4px;           
+    box-sizing: border-box;
+}
+
+.UserManagement_form2 button {
+    height: 30px;           
+    box-sizing: border-box;
+    border: 1px solid #474646;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}

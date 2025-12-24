@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.recharge.backend.bookmark.dao.BookmarkDAO">
+
+
+    <!-- ⭐ 북마크 토글: 이미 존재하면 삭제 / 없으면 추가 -->
+    <select id="existsBookmark" resultType="int">
+        SELECT COUNT(*)
+        FROM TB_BOOKMARK
+        WHERE USER_ID = #{userId}
+        AND BOOKMARK_TARGET_TYPE = #{bookmarkTargetType}
+        AND BOOKMARK_TARGET_ID = #{bookmarkTargetId}
+    </select>
+
+    <insert id="insertBookmark">
+        INSERT INTO TB_BOOKMARK (
+        BOOKMARK_ID,
+        BOOKMARK_TARGET_TYPE,
+        BOOKMARK_TARGET_ID,
+        USER_ID,
+        CREATE_DATE,
+        CREATE_ID,
+        UPDATED_DATE,
+        UPDATED_ID
+        ) VALUES (
+        SYS_GUID(),
+        #{bookmarkTargetType},
+        #{bookmarkTargetId},
+        #{userId},
+        SYSDATE,
+        #{userId},
+        SYSDATE,
+        #{userId}
+        )
+    </insert>
+
+    <delete id="deleteBookmark">
+        DELETE FROM TB_BOOKMARK
+        WHERE USER_ID = #{userId}
+        AND BOOKMARK_TARGET_TYPE = #{bookmarkTargetType}
+        AND BOOKMARK_TARGET_ID = #{bookmarkTargetId}
+    </delete>
+
+
+
+    <!-- 🎬 영화 북마크 조회 -->
+    <select id="getMovieBookmarks" resultType="com.recharge.backend.bookmark.vo.BookmarkVO">
+        SELECT
+        B.BOOKMARK_ID,
+        B.BOOKMARK_TARGET_TYPE,
+        B.BOOKMARK_TARGET_ID       AS bookmarkTargetId, -- ⭐ 공통 필드
+        M.MOVIE_ID                 AS movieId,          -- (원하면 유지)
+        M.MOVIE_TITLE              AS title,
+        M.MOVIE_POSTER             AS poster
+        FROM TB_BOOKMARK B
+        JOIN TB_MOVIE M
+        ON M.MOVIE_ID = B.BOOKMARK_TARGET_ID
+        WHERE B.USER_ID = #{userId}
+        AND B.BOOKMARK_TARGET_TYPE = 'MOVIE'
+        ORDER BY B.CREATE_DATE DESC
+    </select>
+
+    <!-- 🎵 음악 북마크 조회 -->
+    <select id="getMusicBookmarks" resultType="com.recharge.backend.bookmark.vo.BookmarkVO">
+        SELECT
+        B.BOOKMARK_ID,
+        B.BOOKMARK_TARGET_TYPE,
+        B.BOOKMARK_TARGET_ID       AS bookmarkTargetId, -- ⭐ 공통 필드
+        MU.MUSIC_ID                AS musicId,
+        MU.MUSIC_IMAGE_PATH        AS albumArt,
+        MU.MUSIC_TITLE             AS title,
+        MU.MUSIC_SINGER            AS singer
+        FROM TB_BOOKMARK B
+        JOIN TB_MUSIC MU
+        ON MU.MUSIC_ID = B.BOOKMARK_TARGET_ID
+        WHERE B.USER_ID = #{userId}
+        AND B.BOOKMARK_TARGET_TYPE = 'MUSIC'
+        ORDER BY B.CREATE_DATE DESC
+    </select>
+
+    <!-- 📝 영화 게시글 북마크 조회 (예시) -->
+    <select id="getMoviePostBookmarks" resultType="com.recharge.backend.bookmark.vo.BookmarkVO">
+        SELECT
+        B.BOOKMARK_ID,
+        B.BOOKMARK_TARGET_TYPE,
+        B.BOOKMARK_TARGET_ID       AS bookmarkTargetId, -- ⭐ 공통 필드
+        P.MOVIE_POST_ID            AS moviePostId,
+        P.MOVIE_POST_TITLE         AS title,
+        M.MOVIE_POSTER             AS poster,
+        P.MOVIE_ID                 AS movieId
+        FROM TB_BOOKMARK B
+        JOIN TB_MOVIE_POST P
+        ON P.MOVIE_POST_ID = B.BOOKMARK_TARGET_ID
+        JOIN TB_MOVIE M
+        ON M.MOVIE_ID = P.MOVIE_ID
+        WHERE B.USER_ID = #{userId}
+        AND B.BOOKMARK_TARGET_TYPE = 'MOVIE_POST'
+        ORDER BY B.CREATE_DATE DESC
+    </select>
+
+
+
+</mapper>

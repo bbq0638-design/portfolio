@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.recharge.backend.music.dao.MusicPostDAO">
+
+    <!-- 🔥 게시글 다음 PK -->
+    <select id="getNextMusicPostId" resultType="long">
+        SELECT NVL(MAX(MUSIC_POST_ID), 0) + 1
+        FROM TB_MUSIC_POST
+    </select>
+
+    <!-- 🔥 리스트 다음 PK -->
+    <select id="getNextMusicListId" resultType="long">
+        SELECT NVL(MAX(MUSIC_LIST_ID), 0) + 1
+        FROM TB_MUSIC_LIST
+    </select>
+
+    <!-- 🎵 게시글 INSERT -->
+    <insert id="insertMusicPost" parameterType="com.recharge.backend.music.vo.MusicPostVO">
+        INSERT INTO TB_MUSIC_POST (
+        MUSIC_POST_ID,
+        USER_ID,
+        MUSIC_POST_TITLE,
+        MUSIC_POST_TEXT,
+        CREATE_DATE, CREATE_ID,
+        UPDATED_DATE, UPDATED_ID
+        ) VALUES (
+        #{musicPostId},
+        #{userId},
+        #{musicPostTitle},
+        #{musicPostText},
+        SYSDATE, #{createId},
+        SYSDATE, #{updatedId}
+        )
+    </insert>
+
+    <!-- 🎧 재생목록 BULK INSERT -->
+    <insert id="insertMusicListBatch">
+        INSERT ALL
+        <foreach collection="list" item="it">
+            INTO TB_MUSIC_LIST (
+            MUSIC_LIST_ID,
+            MUSIC_POST_ID,
+            MUSIC_ID,
+            MUSIC_TITLE,
+            MUSIC_SINGER,
+            MUSIC_IMAGE_PATH,
+            MUSIC_PREVIEW_URL,
+            CREATE_DATE, CREATE_ID,
+            UPDATED_DATE, UPDATED_ID
+            ) VALUES (
+            #{it.musicListId},
+            #{postId},
+            #{it.musicId},
+            #{it.musicTitle},
+            #{it.musicSinger},
+            #{it.musicImagePath},
+            #{it.musicPreviewUrl},
+            SYSDATE, #{userId},
+            SYSDATE, #{userId}
+            )
+        </foreach>
+        SELECT * FROM dual
+    </insert>
+
+    <!-- 🎯 게시글 리스트 조회 -->
+    <select id="selectAllPosts" resultType="com.recharge.backend.music.vo.MusicPostVO">
+        SELECT
+        p.MUSIC_POST_ID    AS musicPostId,
+        p.USER_ID          AS userId,
+        p.MUSIC_POST_TITLE AS musicPostTitle,
+        p.MUSIC_POST_TEXT  AS musicPostText,
+        p.CREATE_ID        AS createId,
+        p.UPDATED_ID       AS updatedId,
+        (
+        SELECT l.MUSIC_IMAGE_PATH
+        FROM TB_MUSIC_LIST l
+        WHERE l.MUSIC_POST_ID = p.MUSIC_POST_ID
+        AND ROWNUM = 1
+        ) AS firstImagePath
+        FROM TB_MUSIC_POST p
+        ORDER BY p.MUSIC_POST_ID DESC
+    </select>
+
+    <!-- 🎵 게시글 단건 조회 -->
+    <select id="selectMusicPostDetail" resultType="com.recharge.backend.music.vo.MusicPostVO">
+        SELECT
+        MUSIC_POST_ID    AS musicPostId,
+        USER_ID          AS userId,
+        MUSIC_POST_TITLE AS musicPostTitle,
+        MUSIC_POST_TEXT  AS musicPostText,
+        CREATE_ID        AS createId,
+        UPDATED_ID       AS updatedId
+        FROM TB_MUSIC_POST
+        WHERE MUSIC_POST_ID = #{musicPostId}
+    </select>
+
+    <!-- 🎵 재생목록 조회 -->
+    <select id="selectMusicListByPost" resultType="com.recharge.backend.music.vo.MusicListVO">
+        SELECT
+        MUSIC_LIST_ID,
+        MUSIC_POST_ID,
+        MUSIC_ID,
+        MUSIC_TITLE,
+        MUSIC_SINGER,
+        MUSIC_IMAGE_PATH,
+        MUSIC_PREVIEW_URL
+        FROM TB_MUSIC_LIST
+        WHERE MUSIC_POST_ID = #{musicPostId}
+        ORDER BY MUSIC_LIST_ID
+    </select>
+
+    <!-- ✅ TB_MUSIC에 곡이 이미 있는지 확인 -->
+    <select id="existsMusic" resultType="int">
+        SELECT COUNT(1)
+        FROM TB_MUSIC
+        WHERE MUSIC_ID = #{musicId}
+    </select>
+
+    <!-- ✅ TB_MUSIC에 곡 정보 저장 -->
+    <insert id="insertMusic" parameterType="com.recharge.backend.music.vo.MusicListVO">
+        INSERT INTO TB_MUSIC (
+        MUSIC_ID,
+        MUSIC_TITLE,
+        MUSIC_SINGER,
+        MUSIC_IMAGE_PATH,
+        MUSIC_PREVIEW_URL,
+        CREATE_DATE,
+        CREATE_ID,
+        UPDATED_DATE,
+        UPDATED_ID
+        ) VALUES (
+        #{musicId},
+        #{musicTitle},
+        #{musicSinger},
+        #{musicImagePath},
+        #{musicPreviewUrl},
+        SYSDATE, 'system',
+        SYSDATE, 'system'
+        )
+    </insert>
+
+</mapper>

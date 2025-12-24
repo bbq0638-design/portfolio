@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./Place_Detail.css">
+        <link rel="stylesheet" href="header.css">
+        <title>플레이스 게시판</title>
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+            <ul class="logout_status">
+                <li class="login"><a href="../login/login_user.html">로그인</a></li>
+                <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+            </ul>
+            <ul class="login_status">
+                <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+                <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+                <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+                <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+            </ul>
+        </header>
+        <div class="sub_header">
+            <div class="sub_header_title">
+                <span class="sub_header_text01">플레이스 정보</span>
+                <span class="sub_header_text02">플레이스의 자세한 정보를 볼수있어요!</span>
+            </div>
+        </div>
+        <main class="main">
+            <div class="place_detail_titlebox">
+                <span class="place_detail_title" id="postTitle"></span>
+                <span class="place_detail_date" id="postDate"></span>
+            </div>
+            <div class="place_detail_box">
+                <div class="place_detail_imgbox">
+                    <img class="place_detail_img" id="postImage" src="../image/noimage.png">
+                </div>
+                <div class="place_detail_box01">
+                    <div class="place_detail01">
+                        <div class="place_detail01_box01">
+                            <span class="place_detail_text01">작성자</span>
+                            <span class="place_detail_text02" id="postAuthor">홍길동</span>
+                        </div>
+                        <div class="place_detail01_box02">
+                            <span class="review_star_text">후기 별점</span>
+                            <div class="star_rating" id="starRating">
+                                </div>
+                        </div>
+                    </div>
+                    <div class="place_detail02">
+                        <div class="place_detail02_box01">
+                            <span class="place_detail_text01">주소</span>
+                            <span class="place_detail_text02" id="placeAddress"></span>
+                        </div>
+                        <div class="place_detail02_box02">
+                            <span class="place_detail_text01">장소 카테고리</span>
+                            <span class="place_detail_text02" id="placeCategory"></span>
+                        </div>
+                        <div class="place_detail02_box03">
+                            <span class="place_detail_text01">한줄평</span>
+                            <span class="place_detail_text02" id="oneLineReview"></span>
+                        </div>
+                        <div class="place_detail02_box04">
+                            <span class="place_detail_text01">후기</span>
+                            <span class="place_detail_text02" id="Review"></span>
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+            <div class="place_detail_review">
+                <p id="reviewContent"></p>
+            </div>
+            <div class="place_pagemove_box">
+                <div class="place_pagebox" id="prevPost">
+                    <span class="place_detail_text03">이전</span>
+                    <a class="place_detail_text04" href="#">이전 게시글</a>
+                </div>
+                <div class="place_pagebox" id="nextPost">
+                    <span class="place_detail_text03">다음</span>
+                    <a class="place_detail_text04" href="#">다음 게시글</a>
+                </div>
+            </div>
+        </main>
+        <button class="submit_button" type="button"><a class="pagemove_a" href="./Place_Main.html">목록</a></button>
+        <script src="header.js"></script>
+        <script src="Place_Detail.js"></script>
+    </body>
+</html>

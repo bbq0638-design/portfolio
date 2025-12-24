@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>관리자 게시판관리</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../header/header.css">
+        <link rel="stylesheet" href="admin.css">
+        <script>
+            function popup_message() {
+                window.open('../../popup/message/message.html', '메세지채팅창', 'width=480px, height=700px, location=no');
+            }
+            function popup_notice() {
+                window.open('../../popup/notification/notification.html', '알림창', 'width=480px, height=700px, location=no');
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+
+        </header>
+        <main>
+            <div class="sub_header">
+                관리자 페이지
+            </div>
+            <div class="admin_menu">
+                <div class="admin_profile">
+                    <img src="../image/noimage.png" alt="프로필이미지">
+                    <div class="admin_id">
+                        관리자01
+                    </div>
+                </div>
+                <div class="admin_member">
+                    <a href="admin.html">회원관리</a>
+                </div>
+                <div class="admin_board">
+                    <a href="admin_board.html">게시판 관리</a>
+                </div>
+                <div class="admin_notice">
+                    <a href="admin_notice.html">공지글 작성</a>
+                </div>
+            </div>
+            <div class="admin_list">
+                <h2>회원 관리</h2>
+                <form action="" id="formbox1">
+                    <div class="report_content">
+                        신고내용
+                        <select name="report_content" id="report_content_select">
+                            <option value="욕설/비난">욕설/비난</option>
+                            <option value="부적절한 내용">부적절한 내용</option>
+                            <option value="광고의심계정">광고 의심 계정</option>
+                            <option value="부적절한 이미지">부적절한 이미지</option>
+                            <option value="성희롱/모욕">성희롱/모욕</option>
+                        </select>
+                    </div>
+                    <div class="report_date">
+                        신고날짜
+                        <input type="date"> ~ <input type="date">
+                    </div>
+                    <div class="report_position">
+                        게시판
+                        <select name="report_position" id="report_position">
+                            <option value="메이트 찾기">메이트 찾기</option>
+                            <option value="찾아주세요">찾아주세요</option>
+                            <option value="플레이스">플레이스</option>
+                            <option value="메세지">메세지</option>
+                        </select>
+                    </div>
+                    <button class="search">검색</button>
+                </form>
+                <table border="0" style="width: 100%; text-align: center; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th>선택</th>
+                        <th>번호</th>
+                        <th>신고 대상</th>
+                        <th>신고내역</th>
+                        <th>신고한 닉네임</th>
+                        <th>신고 날짜</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">11</td>
+                        <td class="reported_nick">치즈강아지</td>
+                        <td class="reported_reason">부적절한 이미지</td>
+                        <td class="reporter">깜이</td>
+                        <td class="report_date">2025-08-31</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">10</td>
+                        <td class="reported_nick">푸들러버</td>
+                        <td class="reported_reason">욕설/비난</td>
+                        <td class="reporter">아좀그냥좀</td>
+                        <td class="report_date">2025-08-31</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">9</td>
+                        <td class="reported_nick">댕댕수호자</td>
+                        <td class="reported_reason">부적절한 내용</td>
+                        <td class="reporter">닉네임귀찮아</td>
+                        <td class="report_date">2025-08-31</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">8</td>
+                        <td class="reported_nick">깜자</td>
+                        <td class="reported_reason">욕설/비난</td>
+                        <td class="reporter">그냥대충쓰자</td>
+                        <td class="report_date">2025-08-31</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">7</td>
+                        <td class="reported_nick">꼬리살랑</td>
+                        <td class="reported_reason">광고 의심 계정</td>
+                        <td class="reporter">치킨먹고싶다</td>
+                        <td class="report_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">6</td>
+                        <td class="reported_nick">꼬질말티</td>
+                        <td class="reported_reason">부적절한 이미지</td>
+                        <td class="reporter">물론피자도</td>
+                        <td class="report_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">5</td>
+                        <td class="reported_nick">카마</td>
+                        <td class="reported_reason">욕설/비난</td>
+                        <td class="reporter">하지만햄버거</td>
+                        <td class="report_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">4</td>
+                        <td class="reported_nick">누렁이</td>
+                        <td class="reported_reason">광고 의심 계정</td>
+                        <td class="reporter">버거킹짱이지</td>
+                        <td class="report_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">3</td>
+                        <td class="reported_nick">해피</td>
+                        <td class="reported_reason">부적절한 이미지</td>
+                        <td class="reporter">근데버거킹</td>
+                        <td class="report_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">2</td>
+                        <td class="reported_nick">꼬순내</td>
+                        <td class="reported_reason">광고 의심 계정</td>
+                        <td class="reporter">롱치킨버거</td>
+                        <td class="report_date">2025-08-30</td>
+                    </tr>
+                    <tr>
+                        <td class="checkbox"><input type="checkbox" value="1"></td>
+                        <td class="no">1</td>
+                        <td class="reported_nick">차우차우</td>
+                        <td class="reported_reason">욕설/비난</td>
+                        <td class="reporter">단종은안돼요</td>
+                        <td class="report_date">2025-08-30</td>
+                    </tr>
+                </tbody>
+                </table>
+                <div class="restrict_action">
+                    <select name="restricted" id="restricted">
+                        <option value="신고게시글삭제">신고 당한 게시글 삭제</option>
+                        <option value="사용자 이용 제한">사용자 이용 제한</option>
+                    </select>
+                    <div class="buttons">
+                        <div class="button1">
+                            <input type="submit" value="적용">
+                        </div>
+                        <div class="button2">
+                            <input type="submit" value="메세지 보내기">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    <script src="../header/header.js"></script>
+    </body>
+</html>

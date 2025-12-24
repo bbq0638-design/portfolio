@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>관리자페이지</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../header/header.css">
+        <link rel="stylesheet" href="addnotice.css">
+        <script>
+            function popup_message() {
+                window.open('../../popup/message/message.html', '메세지채팅창', 'width=480px, height=700px, location=no');
+            }
+            function popup_notice() {
+                window.open('../../popup/notification/notification.html', '알림창', 'width=480px, height=700px, location=no');
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+            <ul class="logout_status">
+                <li class="login"><a href="../login/login_user.html">로그인</a></li>
+                <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+            </ul>
+            <ul class="login_status">
+                <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+                <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+                <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+                <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+            </ul>
+        </header>
+        <main>
+            <div class="sub_header">
+                관리자페이지
+            </div>
+            <div class="admin_menu">
+                <div class="admin_profile">
+                    <img src="../image/noimage.png" alt="프로필이미지">
+                    <div class="admin_id">
+                        관리자01
+                    </div>
+                </div>
+                <div class="admin_member">
+                    <a href="admin.html">회원관리</a>
+                </div>
+                <div class="admin_board">
+                    <a href="admin_board.html">게시판 관리</a>
+                </div>
+                <div class="admin_notice">
+                    <a href="admin_notice.html">공지글 작성</a>
+                </div>
+            </div>
+            <div class="admin_list">
+                <h2>공지글 작성</h2>
+                <div class="notice_form">
+                    <div class="notice_title_wrap">
+                        <p>제목</p>
+                        <input type="text" class="notice_title" placeholder="제목을 입력해주세요.">
+                    </div>
+                    <div class="notice_must">
+                        <p>*필독 표시</p>
+                        <div class="notice_radio_group">
+                            <input type="radio" name="necessary" id="necessary" value="예">
+                            <label for="necessary">예</label>
+                            <input type="radio" name="necessary" id="not_necessary" value="아니오">
+                            <label for="not_necessary">아니오</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="notice_content">
+                    내용
+                    <textarea name="notice_content" id="add_notice_content">내용을 입력하세요.
+                    </textarea>
+                </div>
+            </div>
+            <div class="button_set">
+                <button class="delete">초기화</button>
+                <button class="add"><a href="">게시글 작성</a></button>
+            </div>
+        </main>
+    <script src="../header/header.js"></script>    
+    </body>
+</html>

@@ -1,0 +1,72 @@
+.user_menu_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.user_name {
+  white-space: nowrap;
+}
+
+.hamburger_btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: var(--text-primary); /* ✅ 기본 색 고정 */
+  transition: none !important; /* ✅ 애니메이션 제거 */
+}
+
+.hamburger_btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary) !important; /* ✅ 호버 시에도 색 고정 */
+}
+
+.user_dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 140px;
+  z-index: 100;
+}
+
+.user_dropdown li {
+  padding: 8px 16px;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.user_dropdown li:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.user_dropdown a,
+.user_dropdown button {
+  text-decoration: none !important; 
+  color: var(--text-primary) !important;
+  background: none !important;
+  border: none !important;
+  font-weight: 500 !important;
+  width: 100% !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+}
+.auth_nav button::after {
+  display: none !important;
+  content: none !important;
+}

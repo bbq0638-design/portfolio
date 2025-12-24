@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>찾아주세요</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../header/header.css">
+        <link rel="stylesheet" href="lost.css">
+        <script>
+            // 메세지 팝업 창
+            function popup_message() {
+                window.open('../../popup/message/message.html', '메세지채팅창', 'width=480px, height=700px, location=no');
+            }
+            // 알림 팝업 창
+            function popup_notice() {
+                window.open('../../popup/notification/notification.html', '알림창', 'width=480px, height=700px, location=no');
+            }
+        </script>
+    </head>
+    <body>
+        <!-- 헤더 -->
+        <header>
+            <img src="../image/logo.png"  alt="logo" onclick="location.href='../main/main_page.html'">
+            <ul class="menu">
+                <li class="mate_search"><a href="../mate/mate_finder.html">메이트 찾기</a></li>
+                <li class="lost"><a href="../lost/lost_main.html">찾아주세요</a></li>
+                <li class="place"><a href="../place/Place_Main.html">플레이스</a></li>
+                <li class="notice"><a href="../notice/notice_main.html">공지사항</a></li>
+            </ul>
+            <ul class="logout_status">
+                <li class="login"><a href="../login/login_user.html">로그인</a></li>
+                <li class="signup"><a href="../signup/signup.html">회원가입</a></li>
+            </ul>
+            <ul class="login_status">
+                <li class="profile_image"><a href="../Profile/Profile.html"><img src="../image/kuro.jpg"></a></li>
+                <li class="message_point"><a href="#" onclick="popup_message()"><img src="../image/message_img.png"></a></li>
+                <li class="notification_point"><a href="#" onclick="popup_notice()"><img src="../image/notification_img.png"></a></li>
+                <li class="edit_point"><a href="../Profile_Edit/Profile_Edit.html"><img src="../image/edit_img.png"></a></li>
+            </ul>
+        </header>
+          
+        <main>
+            <div class="sub_header">
+                <img src="../image/lost_image.png" alt="찾아주세요">
+            </div>
+            <div class="lost_main">
+                <div class="list" id="list01" onclick="location.href='./lost_detail01.html'">
+                    <div class="lost_image"><img src="../image/kong.png" alt="콩이"></div>
+                    <div class="lost_name">콩이</div>
+                    <div class="lost_place">천안</div>
+                </div>
+                <div class="list" id="list02">
+                    <div class="lost_image"><img src="../image/brown.png" alt="누렁이"></div>
+                    <div class="lost_name">누렁이</div>
+                    <div class="lost_place">서울</div>
+                </div>
+                <div class="list" id="list03">
+                    <div class="lost_image"><img src="../image/ggong.png" alt="꽁이"></div>
+                    <div class="lost_name">꽁이</div>
+                    <div class="lost_place">울산</div>
+                </div>
+                <div class="list" id="list04">
+                    <div class="lost_image"><img src="../image/nunkkal.png" alt="눈깔이"></div>
+                    <div class="lost_name">눈깔이</div>
+                    <div class="lost_place">수원</div>
+                </div>
+                <div class="list" id="list05">
+                    <div class="lost_image"><img src="../image/bigeye.png" alt="왕눈이"></div>
+                    <div class="lost_name">왕눈이</div>
+                    <div class="lost_place">부산</div>
+                </div>
+                <div class="list" id="list06">
+                    <div class="lost_image"><img src="../image/racoon.png" alt="너구리"></div>
+                    <div class="lost_name">너구리</div>
+                    <div class="lost_place">대구</div>
+                </div>
+            </div>
+            <div class="submit_button">
+                <input type="submit" value="실종 글쓰기" onclick="location.href='./lost_form.html'">
+            </div>
+        </main>
+        <script src="../header/header.js"></script>
+    </body>
+</html>

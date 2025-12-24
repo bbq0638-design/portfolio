@@ -1,0 +1,212 @@
+.findchargerlogin_place{
+    padding:0 20px;
+}
+.findchargerlogin_place_list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-height: 300px;         
+    width: 100%;
+    overflow-y: auto;          
+    overflow-x: hidden;       
+    padding: 10px;            
+    box-sizing: border-box;    
+}
+
+.findchargerlogin_place_card{
+    display:flex;
+    gap:20px;
+    width:100%;
+    border: solid 1px rgb(223, 222, 222);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    height: 140px;
+    background-color:#F8F9F9;
+}
+.findchargerlogin_place_card:hover{
+   border:solid 2px #004E89;
+}
+
+.findchargerlogin_place_card h3{
+    margin:0;
+    padding:0;
+    font-size:15px;
+}
+.findchargerlogin_place_card p{
+    margin:0;
+    padding:0;
+    font-size:13px;
+    color:rgb(149, 149, 149);
+}
+.findchargerlogin_place_card img {
+    width: 200px;       
+    display: block;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;        
+}
+
+.findchargerlogin_place_card_content{
+    display:block;
+    margin-top:10px;
+}
+.findchargerlogin_place_content_address{
+    display:flex;
+    gap:20px;
+}
+.findchargerlogin_place_content_address div{
+    display:flex;
+}
+.findchargerlogin_place_content_address p{
+    margin-top:13px;
+}
+.findchargerlogin_place_content_address div p{
+    margin-top:13px;
+}
+.findchargerlogin_place_btn{
+    display:flex;
+    margin-top:10px;
+    gap:20px;
+}
+.findchargerlogin_place_btn div{
+    display:flex;
+    border: solid 1px rgb(223, 222, 222);
+    gap:3px;
+    width:160px;
+    padding: 10px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    background-color:#F8F9F9;
+    cursor: pointer;
+    box-sizing:content-box;
+    justify-content: center;
+}
+.findchargerlogin_place_btn div p{
+    font-size: 13px;
+    color:black;
+}
+.findchargerlogin_place_btn div img{
+    margin:0;
+}
+
+.findchargerlogin_place_card_content img{
+    width:20px;
+    height: 20px;
+    margin: 15px 0 0 -5px;
+}
+.findchargerlogin_place_btn button{
+    border:none;
+    background-color:#F8F9F9;
+}
+.findchargerlogin_place_list::-webkit-scrollbar {
+  width: 8px;
+}
+.findchargerlogin_place_list:hover::-webkit-scrollbar {
+  width: 10px;
+}
+.findchargerlogin_place_list::-webkit-scrollbar-track {
+  background: #F0F2F4;
+  border-radius: 4px;
+}
+.findchargerlogin_place_list::-webkit-scrollbar-thumb {
+  background-color: #004E89; 
+  border-radius: 4px;
+  border: 2px solid #F0F2F4;
+  transition: all 0.3s ease;
+}
+.findchargerlogin_place_list::-webkit-scrollbar-thumb:hover {
+  background-color: #013359;
+  border-radius: 6px;
+  width: 10px;
+}
+.findchargerlogin_list_header h3{
+    margin:0;
+}
+.findchargerlogin_list_header{
+    display:flex;
+    justify-content: space-between;
+}
+.findchargerlogin_list_header button{
+    height: 30px;
+    border:none;
+    background-color: #F8F9F9;
+    font-size:14px;
+    color:rgb(177, 177, 177);
+    cursor: pointer;
+}
+.findchargerlogin_list_header button:hover{
+    color:#004E89;
+    font-weight: bold;
+}
+.findchargerlogin_sub_header{
+    color:rgb(141, 141, 141);
+    font-size:14px;
+}
+.findchargerlogin_charger_card{
+    border: solid 1px rgb(223, 222, 222);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    background-color:#F8F9F9;
+    padding:10px 10px;
+    margin-top:20px;
+}
+.findchargerlogin_charger_card h4{
+    margin:0;
+}
+.findchargerlogin_charger_card_header{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: bold;
+}
+.findchargerlogin_charger_card p{
+    margin:0;
+}
+.findchargerlogin_charger_card_address{
+    margin-top:10px;
+    display:flex;
+    gap:5px;
+    font-size: 13px;;
+    color:rgb(141, 141, 141);
+}
+.findchargerlogin_charger_card_address img{
+    width:20px !important;
+    margin-top:1px;
+}
+.findchargerlogin_charger_card_address span{
+    color:rgb(1, 199, 1);
+}
+.findchargerlogin_charger_card_option div{
+    margin-top:10px;
+}
+.findchargerlogin_charger_card_option:first-child{
+    font-weight: bold;
+}
+.findchargerlogin_charger_card_option div{
+    display:flex;
+    gap:20px;
+    font-size: 13px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.charger-scroll-area {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.charger-scroll-area::-webkit-scrollbar {
+    display: none;
+}
+.findchargerlogin_place_btn a{
+    text-decoration: none;
+    color: black;
+}
+.findchargerlogin_charger_card:hover {
+    border:solid 3px #8bbae0;
+
+}
+
+.findchargerlogin_charger_card.selected {
+    border:solid 3px #004E89;
+}

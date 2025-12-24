@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.recharge.backend.music.dao.MusicDAO">
+
+    <resultMap id="MusicMap" type="com.recharge.backend.music.vo.MusicVO">
+        <id     column="MUSIC_ID"         property="musicId"/>
+        <result column="MUSIC_IMAGE_PATH" property="musicImagePath"/>
+        <result column="MUSIC_PREVIEW_URL" property="musicPreviewUrl"/>
+        <result column="MUSIC_TITLE"      property="musicTitle"/>
+        <result column="MUSIC_SINGER"     property="musicSinger"/>
+        <result column="MUSIC_PLAYTIME"   property="musicPlaytime"/>
+        <result column="CREATE_DATE"      property="createDate"/>
+        <result column="CREATE_ID"        property="createId"/>
+        <result column="UPDATED_DATE"     property="updatedDate"/>
+        <result column="UPDATED_ID"       property="updatedId"/>
+    </resultMap>
+
+    <!-- 🎧 iTunes / Apple Music 결과 DB 저장 (벌크 업서트: MERGE) -->
+    <insert id="upsertBulk" parameterType="java.util.List">
+        MERGE INTO TB_MUSIC T
+        USING (
+        <foreach collection="list" item="m" separator=" UNION ALL">
+            SELECT
+            #{m.musicId}         AS MUSIC_ID,
+            #{m.musicImagePath}  AS MUSIC_IMAGE_PATH,
+            #{m.musicPreviewUrl} AS MUSIC_PREVIEW_URL,
+            #{m.musicTitle}      AS MUSIC_TITLE,
+            #{m.musicSinger}     AS MUSIC_SINGER,
+            #{m.musicPlaytime}   AS MUSIC_PLAYTIME,
+            'system'             AS CREATE_ID,
+            'system'             AS UPDATED_ID
+            FROM DUAL
+        </foreach>
+        ) S
+        ON (T.MUSIC_ID = S.MUSIC_ID)
+        WHEN MATCHED THEN UPDATE SET
+        T.MUSIC_IMAGE_PATH  = NVL(S.MUSIC_IMAGE_PATH, T.MUSIC_IMAGE_PATH),
+        T.MUSIC_PREVIEW_URL = NVL(S.MUSIC_PREVIEW_URL, T.MUSIC_PREVIEW_URL),
+        T.MUSIC_TITLE       = NVL(S.MUSIC_TITLE, T.MUSIC_TITLE),
+        T.MUSIC_SINGER      = NVL(S.MUSIC_SINGER, T.MUSIC_SINGER),
+        T.MUSIC_PLAYTIME    = NVL(S.MUSIC_PLAYTIME, T.MUSIC_PLAYTIME),
+        T.UPDATED_DATE      = SYSDATE,
+        T.UPDATED_ID        = S.UPDATED_ID
+        WHEN NOT MATCHED THEN INSERT (
+        MUSIC_ID, MUSIC_IMAGE_PATH, MUSIC_PREVIEW_URL,
+        MUSIC_TITLE, MUSIC_SINGER, MUSIC_PLAYTIME,
+        CREATE_DATE, CREATE_ID, UPDATED_DATE, UPDATED_ID
+        ) VALUES (
+        S.MUSIC_ID, S.MUSIC_IMAGE_PATH, S.MUSIC_PREVIEW_URL,
+        S.MUSIC_TITLE, S.MUSIC_SINGER, S.MUSIC_PLAYTIME,
+        SYSDATE, S.CREATE_ID, SYSDATE, S.UPDATED_ID
+        )
+    </insert>
+
+    <!-- 🎶 제목 또는 가수명으로 검색 -->
+    <select id="searchFromDb" resultMap="MusicMap">
+        SELECT
+        MUSIC_ID, MUSIC_IMAGE_PATH, MUSIC_PREVIEW_URL,
+        MUSIC_TITLE, MUSIC_SINGER, MUSIC_PLAYTIME,
+        CREATE_DATE, CREATE_ID, UPDATED_DATE, UPDATED_ID
+        FROM TB_MUSIC
+        WHERE
+        LOWER(MUSIC_TITLE) LIKE '%' || LOWER(#{keyword}) || '%'
+        OR LOWER(MUSIC_SINGER) LIKE '%' || LOWER(#{keyword}) || '%'
+        ORDER BY UPDATED_DATE DESC NULLS LAST
+    </select>
+
+    <select id="selectTopChartFromDb" resultType="com.recharge.backend.music.vo.MusicVO">
+        SELECT
+        MUSIC_ID,
+        MUSIC_TITLE,
+        MUSIC_SINGER,
+        MUSIC_IMAGE_PATH,
+        MUSIC_PREVIEW_URL
+        FROM TB_MUSIC
+        ORDER BY CREATE_DATE DESC
+        FETCH FIRST 50 ROWS ONLY
+    </select>
+
+</mapper>
